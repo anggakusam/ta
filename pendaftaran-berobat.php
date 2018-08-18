@@ -15,7 +15,7 @@ include "koneksi.php";
     <div class="container-fluid">
       <div class="row">
 
-        <!--KONTEN KIRI-->
+        <!--KONTEN KIRIiiiiiiiiiiiiiiiiiiiiiiiiasaaaaaaaaaaaaaaaaa-->
         <div class="col-md-3">
             <h1>Pendaftaran</h1>
         </div>
