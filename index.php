@@ -14,7 +14,7 @@
 
         <!--KONTEN KIRI-->
         <div class="col-md-3">
-            <h1>Halaman Awal</h1>
+            <h1>Halaman Awalllllllllll</h1>
         </div>
 
 
