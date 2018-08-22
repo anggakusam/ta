@@ -1,6 +1,4 @@
-<?php
-include "koneksi.php";
-?>
+
 <html>
   <head>
     <title>
@@ -15,7 +13,7 @@ include "koneksi.php";
     <div class="container-fluid">
       <div class="row">
 
-        <!--KONTEN KIRIiiiiiiiiiiiiiiiiiiiiiiiiasaaaaaaaaaaaaaaaaa-->
+        <!--KONTEN KIRI-->
         <div class="col-md-3">
             <h1>Pendaftaran</h1>
         </div>
@@ -27,42 +25,35 @@ include "koneksi.php";
             <?php include "menu.php"; ?>
           </div>
           <hr>
-            <form method="POST" action="aksi.php?aksi=daftar">
-                <div class="form-group">
-                  <label for="no_reg">No Reg</label>
-                  <input list="no_reg" name="no_reg" class="form-control" autofocus required >
-                  <datalist id="no_reg">
-                  <?php
-  
-                  $sql = "select no_reg, nama from pendaftaran order by no_reg asc";    
-                  $query = mysqli_query($con,$sql) or die(mysql_error);
-                  
-                  while($data = mysqli_fetch_array($query)){
-                    echo"
-                      <option value='".$data['no_reg']." - ".$data['nama']."'>
-                    ";
-                  }
-                  ?>
-                  </datalist>
-                </div> 
-                <div class="form-group">
-                  <label for="nama">Nama</label>
-                  <input type="text" class="form-control" id="nama" name="nama" aria-describedby="emailHelp" placeholder="Masukan Nama" required>
-                </div> 
-                <div class="form-group">
-                  <label for="tgl_lahir">Tanggal Lahir</label>
-                  <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir" required>
-                </div> 
-                <div class="form-group">
-                  <label for="alamat">Alamat</label>
-                  <textarea class="form-control" id="alamat" name="alamat" rows="3" required> </textarea>
-                </div>
-                <div class="form-group">
-                    <label for="no_hp">No HP</label>
-                    <input type="text" class="form-control" id="no_hp" name="no_hp" aria-describedby="emailHelp" placeholder="Masukan No HP" required>
-                  </div> 
-                  
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Simpan</button>
+
+                <table>
+                    <tr><td>NO REG</td><td><input type="text" id="no_reg" onkeyup="autofill()"></td></tr>
+                    <tr><td>Nama</td><td><input type="text" id="nama" ></td></tr>
+                    <tr><td>Tanggal Lahir</td><td><input type="text" id="tgl_lahir" ></td></tr>
+                    <tr><td>Alamat</td><td><input type="text" id="alamat" ></td></tr>
+                    <tr><td>NO Hp</td><td><input type="text" id="no_hp" ></td></tr>
+                </table>
+
+                <!-- JAVA SCRIPT -->
+                  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+                  <script type="text/javascript">
+                      function autofill(){
+                          var no_reg = $("#no_reg").val();
+                          $.ajax({
+                              url : 'autofill-ajax.php',
+                              data  :  'no_reg='+no_reg,
+                          }).success(function(data){
+                              var json = data,
+                              obj = JSON.parse(json);
+                              $("nama").val(obj.nama);
+                              $("tgl_lahir").val(obj.tanggal_lahir);
+                              $("alamat").val(obj.alamat);
+                              $("no_hp").val(obj.no_hp);
+
+                          });
+                      }
+                  </script>
+
 
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -88,8 +79,5 @@ include "koneksi.php";
         </div>
       </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>
