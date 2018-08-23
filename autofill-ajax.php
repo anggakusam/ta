@@ -5,11 +5,11 @@
     $pasien = mysqli_fetch_array($sql);
     $data = array(
         'nama' => $pasien['nama'],
-        'tanggal_lahir'=> $pasien['tanggal_lahir'],
+        'tgl_lahir'=> $pasien['tgl_lahir'],
         'alamat' => $pasien['alamat'],
         'no_hp' => $pasien['no_hp']
     );
-    echo json_encode($pasien);
+    echo json_encode($data);
 
 
 ?>
