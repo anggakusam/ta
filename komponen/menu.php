@@ -48,18 +48,34 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-          <a class="nav-link" href="#">
-            <i class="fa fa-fw fa-link"></i>
+
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#menulihatdata" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-file"></i>
             <span class="nav-link-text">Lihat Data</span>
           </a>
-      </ul>
-      <ul class="navbar-nav sidenav-toggler">
-        <li class="nav-item">
-          <a class="nav-link text-center" id="sidenavToggler">
-            <i class="fa fa-fw fa-angle-left"></i>
-          </a>
+          <ul class="sidenav-second-level collapse" id="menulihatdata">
+             <li>
+              <a href="data-pasien.php">Data Pasien</a>
+            </li>
+            <li>
+              <a href="#">Kunjungan umum</a>
+            </li>
+            <li>
+              <a href="#">Bersalin</a>
+            </li>
+            <li>
+              <a href="#">Imunisasi</a>
+            </li>
+            <li>
+              <a href="#">Kunjungan KB</a>
+            </li>
+            <li>
+              <a href="#">Antenatal care</a>
+            </li>
+          </ul>
         </li>
+        
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
