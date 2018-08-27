@@ -11,8 +11,12 @@
 
 
   <div class="content-wrapper">
+  <div class="container-fluid">
     
     <!-- ISI KONTEN -->
+    <div class="form-group">
+        <h2>Pendaftaran</h2>  
+    </div> 
     <div class="container-fluid">
       <form method="POST" action="aksi.php?aksi=daftar">
         <div class="form-group">

@@ -16,6 +16,9 @@
 
     <!-- ISI KONTEN -->
       <div class="form-group">
+        <h2>Kunjungan Umum</h2>  
+       </div> 
+      <div class="form-group">
         <label for="no_reg">No Reg</label>
         <input type="text" class="form-control" id="no_reg" name="no_reg" aria-describedby="emailHelp" onkeyup="autofill()" placeholder="Masukan No reg" autofocus required>
       </div> 
