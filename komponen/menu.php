@@ -38,10 +38,13 @@
               <a href="bersalin.php">Bersalin</a>
             </li>
             <li>
-              <a href="forgot-password.html">Forgot Password Page</a>
+              <a href="imunisasi.php">Imunisasi</a>
             </li>
             <li>
-              <a href="blank.html">Blank Page</a>
+              <a href="kb.php">Kunjungan KB</a>
+            </li>
+            <li>
+              <a href="antenatal.php">Antenatal care</a>
             </li>
           </ul>
         </li>
