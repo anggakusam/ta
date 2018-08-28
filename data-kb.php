@@ -15,6 +15,7 @@
 
   <div class="content-wrapper">
     <div class="container-fluid">
+      <h2>Data Keluarga Berencana</h2>
       <table id='tablePasien' class='display'>
         <thead>
           <tr>

@@ -12,9 +12,10 @@
   <!-- Navigation-->
   <?php include "komponen/menu.php"; ?>
 
-
+  <!-- ISI KONTEN -->
   <div class="content-wrapper">
     <div class="container-fluid">
+        <h2>Data Bersalin</h2>
       <table id='tablePasien' class='display'>
         <thead>
           <tr>
@@ -79,7 +80,7 @@
     
         </tbody>
       </table>
-    <!-- ISI KONTEN -->
+    
     
     
 
