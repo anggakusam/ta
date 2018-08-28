@@ -19,19 +19,24 @@
         <thead>
           <tr>
             <th>No</th>
+            <th>Tanggal Kunjungan</th>
+            <th>No Reg</th>
             <th>Nama</th>
-            <th>Tanggal lahir</th>
-            <th>Alamat</th>
-            <th>No HP</th>
-            <th>Tanggal Daftar</th>
-            <th>Rekap Medik</th>
+            <th>Taksiran Persalinan</th>
+            <th>Diagnosa</th>
+            <th>Jam Lahir</th>
+            <th>Jenis Kelamin</th>
+            <th>Berat Badan</th>
+            <th>Panjang Badan</th>
+            <th>Penolong</th>
+            <th>Aksi</th>
           </tr>
         </thead>
         <tbody>
 
     <?php
 
-    $sql = "select * from pendaftaran";
+    $sql = "select * from persalinan";
     $query = mysqli_query($con, $sql);
     $nomer = 1;
     if ($query) {
@@ -42,11 +47,16 @@
         
               <tr>
                   <td>". $nomer ."</td>
+                  <td>". $data['tgl_kunjungan'] ."</td>
+                  <td>". $data['no_reg'] ."</td>
                   <td>". $data['nama'] ."</td>
-                  <td>". $data['tgl_lahir'] ."</td>
-                  <td>". $data['alamat'] ."</td>
-                  <td>". $data['no_hp'] ."</td>
-                  <td>". $data['tgl_daftar'] ."</td>
+                  <td>". $data['taksiran_persalinan'] ."</td>
+                  <td>". $data['diagnosa'] ."</td>
+                  <td>". $data['jam_lahir'] ."</td>
+                  <td>". $data['jenis_kelamin'] ."</td>
+                  <td>". $data['berat_badan']  ." kg</td>
+                  <td>". $data['panjang_badan']  ." cm</td>
+                  <td>". $data['penolong'] ."</td>
                   <td> 
                     <Center>
                       <a href='#'>

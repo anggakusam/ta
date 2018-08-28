@@ -19,19 +19,23 @@
         <thead>
           <tr>
             <th>No</th>
+            <th>Tanggal Kunjungan</th>
+            <th>No Reg</th>
             <th>Nama</th>
-            <th>Tanggal lahir</th>
-            <th>Alamat</th>
-            <th>No HP</th>
-            <th>Tanggal Daftar</th>
-            <th>Rekap Medik</th>
+            <th>Diagnosa</th>
+            <th>Berat Badan</th>
+            <th>Tekanan Darah</th>
+            <th>Haid Terakhir</th>
+            <th>Taksiran Persalinan</th>
+            <th>Tindakan</th>
+            <th>Keterangan</th>
           </tr>
         </thead>
         <tbody>
 
     <?php
 
-    $sql = "select * from pendaftaran";
+    $sql = "select * from antenatal_care";
     $query = mysqli_query($con, $sql);
     $nomer = 1;
     if ($query) {
@@ -42,18 +46,16 @@
         
               <tr>
                   <td>". $nomer ."</td>
+                  <td>". $data['tgl_kunjungan'] ."</td>
+                  <td>". $data['no_reg'] ."</td>
                   <td>". $data['nama'] ."</td>
-                  <td>". $data['tgl_lahir'] ."</td>
-                  <td>". $data['alamat'] ."</td>
-                  <td>". $data['no_hp'] ."</td>
-                  <td>". $data['tgl_daftar'] ."</td>
-                  <td> 
-                    <Center>
-                      <a href='#'>
-                        <i class='fa fa-address-card'></i>
-                      </a>
-                      </center>
-                  </td>
+                  <td>". $data['diagnosa'] ."</td>
+                  <td>". $data['berat_badan'] ."</td>
+                  <td>". $data['tekanan_darah'] ."</td>
+                  <td>". $data['haid_terakhir'] ."</td>
+                  <td>". $data['taksiran_persalinan'] ."</td>
+                  <td>". $data['tindakan'] ."</td>
+                  <td>". $data['keterangan'] ."</td>
               </tr>
         ";
         $nomer++;

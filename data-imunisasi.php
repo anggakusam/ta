@@ -19,19 +19,25 @@
         <thead>
           <tr>
             <th>No</th>
+            <th>Tanggal Kunjungan</th>
+            <th>No Reg</th>
             <th>Nama</th>
-            <th>Tanggal lahir</th>
-            <th>Alamat</th>
-            <th>No HP</th>
-            <th>Tanggal Daftar</th>
-            <th>Rekap Medik</th>
+            <th>Nama Bayi</th>
+            <th>Berat Badan Bayi</th>
+            <th>Lingkar Kepala Bayi</th>
+            <th>Suhu</th>
+            <th>Jenis Imunisasi</th>
+            <th>Tanggal Lahir Bayi</th>
+            <th>Jadwal Kunjungan Ulang</th>
+            <th>Keterangan</th>
+          
           </tr>
         </thead>
         <tbody>
 
     <?php
 
-    $sql = "select * from pendaftaran";
+    $sql = "select * from imunisasi";
     $query = mysqli_query($con, $sql);
     $nomer = 1;
     if ($query) {
@@ -42,18 +48,17 @@
         
               <tr>
                   <td>". $nomer ."</td>
+                  <td>". $data['tgl_kunjungan'] ."</td>
+                  <td>". $data['no_reg'] ."</td>
                   <td>". $data['nama'] ."</td>
-                  <td>". $data['tgl_lahir'] ."</td>
-                  <td>". $data['alamat'] ."</td>
-                  <td>". $data['no_hp'] ."</td>
-                  <td>". $data['tgl_daftar'] ."</td>
-                  <td> 
-                    <Center>
-                      <a href='#'>
-                        <i class='fa fa-address-card'></i>
-                      </a>
-                      </center>
-                  </td>
+                  <td>". $data['nama_bayi'] ."</td>
+                  <td>". $data['berat_badan_bayi'] ." kg</td>
+                  <td>". $data['lingkar_kepala_bayi'] ." cm</td>
+                  <td>". $data['suhu'] ." °</td>
+                  <td>". $data['jenis_imunisasi'] ."</td>
+                  <td>". $data['tgl_lahir_bayi'] ."</td>
+                  <td>". $data['jadwal_kunjungan_ulang'] ."</td>
+                  <td>". $data['keterangan'] ."</td>
               </tr>
         ";
         $nomer++;

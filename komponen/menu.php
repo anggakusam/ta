@@ -59,19 +59,19 @@
               <a href="data-pasien.php">Data Pasien</a>
             </li>
             <li>
-              <a href="#">Kunjungan umum</a>
+              <a href="data-kunjungan.php">Kunjungan umum</a>
             </li>
             <li>
-              <a href="#">Bersalin</a>
+              <a href="data-bersalin.php">Bersalin</a>
             </li>
             <li>
-              <a href="#">Imunisasi</a>
+              <a href="data-imunisasi.php">Imunisasi</a>
             </li>
             <li>
-              <a href="#">Kunjungan KB</a>
+              <a href="data-kb.php">Kunjungan KB</a>
             </li>
             <li>
-              <a href="#">Antenatal care</a>
+              <a href="data-antenatal.php">Antenatal care</a>
             </li>
           </ul>
         </li>

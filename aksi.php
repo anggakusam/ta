@@ -29,7 +29,8 @@ break;
 
 
 case"umum":
-        
+  
+  $tgl_kunjungan = date("Y-m-d");
   $no_reg = $_POST['no_reg'];
   $nama = $_POST['nama'];
   $keluhan = $_POST['keluhan'];
@@ -38,6 +39,7 @@ case"umum":
 
 mysqli_query($con, "insert into kunjungan_umum values(
   '',
+  '$tgl_kunjungan',
   '$no_reg',
   '$nama',
   '$keluhan',
@@ -53,7 +55,8 @@ break;
 
 
 case"bersalin":
-        
+  
+  $tgl_kunjungan = date("Y-m-d");
   $no_reg = $_POST['no_reg'];
   $nama = $_POST['nama'];
   $taksiran_persalinan = $_POST['taksiran_persalinan'];
@@ -66,6 +69,7 @@ case"bersalin":
 
 mysqli_query($con, "insert into persalinan values(
   '',
+  '$tgl_kunjungan',
   '$no_reg',
   '$nama',
   '$taksiran_persalinan',
@@ -85,7 +89,8 @@ header("location:index.php");
 break;
 
 case"imunisasi":
-        
+
+  $tgl_kunjungan = date("Y-m-d");      
   $no_reg = $_POST['no_reg'];
   $nama = $_POST['nama'];
   $nama_bayi = $_POST['nama_bayi'];
@@ -99,6 +104,7 @@ case"imunisasi":
 
 mysqli_query($con, "insert into imunisasi values(
   '',
+  '$tgl_kunjungan',
   '$no_reg',
   '$nama',
   '$nama_bayi',
@@ -120,7 +126,8 @@ break;
 
 
 case"kb":
-        
+
+  $tgl_kunjungan = date("Y-m-d");  
   $no_reg = $_POST['no_reg'];
   $nama = $_POST['nama'];
   $berat_badan = $_POST['berat_badan'];
@@ -131,6 +138,7 @@ case"kb":
 
 mysqli_query($con, "insert into kb values(
   '',
+  '$tgl_kunjungan',
   '$no_reg',
   '$nama',
   '$berat_badan',
@@ -148,7 +156,8 @@ header("location:index.php");
 break;
 
 case"antenatal":
-        
+
+  $tgl_kunjungan = date("Y-m-d");        
   $no_reg = $_POST['no_reg'];
   $nama = $_POST['nama'];
   $diagnosa = $_POST['diagnosa'];
@@ -156,11 +165,12 @@ case"antenatal":
   $tekanan_darah = $_POST['tekanan_darah'];
   $haid_terakhir = $_POST['haid_terakhir'];
   $taksiran_persalinan = $_POST['taksiran_persalinan'];
-  $tindakan = $_POST['keterangan'];
+  $tindakan = $_POST['tindakan'];
   $keterangan = $_POST['keterangan'];
 
 mysqli_query($con, "insert into antenatal_care values(
   '',
+  '$tgl_kunjungan',
   '$no_reg',
   '$nama',
   '$diagnosa',

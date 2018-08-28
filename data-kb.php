@@ -19,19 +19,21 @@
         <thead>
           <tr>
             <th>No</th>
+            <th>Tanggal Kunjungan</th>
+            <th>No Reg</th>
             <th>Nama</th>
-            <th>Tanggal lahir</th>
-            <th>Alamat</th>
-            <th>No HP</th>
-            <th>Tanggal Daftar</th>
-            <th>Rekap Medik</th>
+            <th>Berat Badan</th>
+            <th>Tekanan Darah</th>
+            <th>Metode KB</th>
+            <th>Jadwal Kunjungan Ulang</th>
+            <th>Keterangan</th>
           </tr>
         </thead>
         <tbody>
 
     <?php
 
-    $sql = "select * from pendaftaran";
+    $sql = "select * from kb";
     $query = mysqli_query($con, $sql);
     $nomer = 1;
     if ($query) {
@@ -42,18 +44,14 @@
         
               <tr>
                   <td>". $nomer ."</td>
+                  <td>". $data['tgl_kunjungan'] ."</td>
+                  <td>". $data['no_reg'] ."</td>
                   <td>". $data['nama'] ."</td>
-                  <td>". $data['tgl_lahir'] ."</td>
-                  <td>". $data['alamat'] ."</td>
-                  <td>". $data['no_hp'] ."</td>
-                  <td>". $data['tgl_daftar'] ."</td>
-                  <td> 
-                    <Center>
-                      <a href='#'>
-                        <i class='fa fa-address-card'></i>
-                      </a>
-                      </center>
-                  </td>
+                  <td>". $data['berat_badan'] ." kg</td>
+                  <td>". $data['tekanan_darah'] ."</td>
+                  <td>". $data['metode_kb'] ."</td>
+                  <td>". $data['jadwal_kunjungan_ulang'] ."</td>
+                  <td>". $data['keterangan'] ."</td>
               </tr>
         ";
         $nomer++;

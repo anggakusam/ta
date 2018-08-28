@@ -19,19 +19,19 @@
         <thead>
           <tr>
             <th>No</th>
+            <th>Tanggal Kunjungan</th>
+            <th>No Reg</th>
             <th>Nama</th>
-            <th>Tanggal lahir</th>
-            <th>Alamat</th>
-            <th>No HP</th>
-            <th>Tanggal Daftar</th>
-            <th>Rekap Medik</th>
+            <th>keluhan</th>
+            <th>Terapi</th>
+            <th>Keterangan</th>
           </tr>
         </thead>
         <tbody>
 
     <?php
 
-    $sql = "select * from pendaftaran";
+    $sql = "select * from kunjungan_umum";
     $query = mysqli_query($con, $sql);
     $nomer = 1;
     if ($query) {
@@ -42,18 +42,12 @@
         
               <tr>
                   <td>". $nomer ."</td>
+                  <td>". $data['tgl_kunjungan'] ."</td>
+                  <td>". $data['no_reg'] ."</td>
                   <td>". $data['nama'] ."</td>
-                  <td>". $data['tgl_lahir'] ."</td>
-                  <td>". $data['alamat'] ."</td>
-                  <td>". $data['no_hp'] ."</td>
-                  <td>". $data['tgl_daftar'] ."</td>
-                  <td> 
-                    <Center>
-                      <a href='#'>
-                        <i class='fa fa-address-card'></i>
-                      </a>
-                      </center>
-                  </td>
+                  <td>". $data['keluhan'] ."</td>
+                  <td>". $data['terapi'] ."</td>
+                  <td>". $data['keterangan'] ."</td>
               </tr>
         ";
         $nomer++;
