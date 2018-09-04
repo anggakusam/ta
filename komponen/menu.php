@@ -19,10 +19,25 @@
             <span class="nav-link-text">Pendaftaran Pasien</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="#">
-            <i class="fa fa-fw fa-table"></i>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#menulihatlaporan" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-file"></i>
             <span class="nav-link-text">Laporan</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="menulihatlaporan">
+            <li>
+              <a href="#.php">Kunjungan Berobat</a>
+            </li>
+            <li>
+              <a href="keuangan.php">Keuangan</a>
+            </li>
+          </ul>
+        </li>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+          <a class="nav-link" href="obat.php">
+            <i class="fa fa-fw fa-table"></i>
+            <span class="nav-link-text">Data Obat</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">

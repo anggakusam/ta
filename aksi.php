@@ -27,6 +27,30 @@ header("location:index.php");
 
 break;
 
+case"obat":
+        
+  $nama_obat = $_POST['nama_obat'];
+  $jenis_obat = $_POST['jenis_obat'];
+  $harga_obat = $_POST['harga_obat'];
+  $jumlah_obat = $_POST['jumlah_obat'];
+  $keterangan = $_POST['keterangan'];
+
+mysqli_query($con, "insert into obat values(
+  '',
+  '$nama_obat',
+  '$jenis_obat',
+  '$harga_obat',
+  '$jumlah_obat',
+  '$keterangan'
+  )")
+or die(mysqli_error($con));
+  
+  
+header("location:index.php");
+  
+
+break;
+
 
 case"umum":
   
@@ -67,21 +91,21 @@ case"bersalin":
   $panjang_badan = $_POST['panjang_badan'];
   $penolong = $_POST['penolong'];
 
-mysqli_query($con, "insert into persalinan values(
-  '',
-  '$tgl_kunjungan',
-  '$no_reg',
-  '$nama',
-  '$taksiran_persalinan',
-  '$diagnosa',
-  '$jam_lahir',
-  '$jenis_kelamin',
-  '$berat_badan',
-  '$panjang_badan',
-  '$penolong'
-  )")
-or die(mysqli_error($con));
-  
+  mysqli_query($con, "insert into persalinan values(
+    '',
+    '$tgl_kunjungan',
+    '$no_reg',
+    '$nama',
+    '$taksiran_persalinan',
+    '$diagnosa',
+    '$jam_lahir',
+    '$jenis_kelamin',
+    '$berat_badan',
+    '$panjang_badan',
+    '$penolong'
+    )")
+  or die(mysqli_error($con));
+
   
 header("location:index.php");
   
@@ -186,6 +210,24 @@ or die(mysqli_error($con));
   
 header("location:index.php");
   
+
+break;
+
+case"edit-pasien":
+
+        $sql = "update data_location set 
+        nama = '".$_POST['nama']."',
+        tgl_lahir = '".$_POST['tgl_lahir']."',
+        alamat = '".$_POST['alamat']."',
+        no_hp = '".$_POST['no_hp']."'
+
+where no_reg = '".$_POST['no_reg']."'";
+
+mysqli_query($con, $sql) 
+or die(mysqli_error($con));
+
+
+header("location:index.php");
 
 break;
 
