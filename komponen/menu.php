@@ -9,40 +9,18 @@
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="index.php">
-            <i class="fa fa-fw fa-dashboard"></i>
+            <i class="fa fa-fw fa-home"></i>
             <span class="nav-link-text">Halaman Depan</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
           <a class="nav-link" href="pendaftaran.php">
-            <i class="fa fa-fw fa-area-chart"></i>
+            <i class="fa fa-fw fa-address-card"></i>
             <span class="nav-link-text">Pendaftaran Pasien</span>
           </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#menulihatlaporan" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-file"></i>
-            <span class="nav-link-text">Laporan</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="menulihatlaporan">
-            <li>
-              <a href="#.php">Kunjungan Berobat</a>
-            </li>
-            <li>
-              <a href="keuangan.php">Keuangan</a>
-            </li>
-          </ul>
-        </li>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="obat.php">
-            <i class="fa fa-fw fa-table"></i>
-            <span class="nav-link-text">Data Obat</span>
-          </a>
-        </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-file"></i>
+            <i class="fa fa-fw fa-address-book"></i>
             <span class="nav-link-text">Pendaftaran Berobat</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
@@ -66,7 +44,7 @@
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#menulihatdata" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-file"></i>
+            <i class="fa fa-fw fa-archive"></i>
             <span class="nav-link-text">Lihat Data</span>
           </a>
           <ul class="sidenav-second-level collapse" id="menulihatdata">
@@ -89,6 +67,28 @@
               <a href="data-antenatal.php">Antenatal care</a>
             </li>
           </ul>
+        </li>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#menulihatlaporan" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-print"></i>
+            <span class="nav-link-text">Laporan</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="menulihatlaporan">
+            <li>
+              <a href="#.php">Kunjungan Berobat</a>
+            </li>
+            <li>
+              <a href="keuangan.php">Keuangan</a>
+            </li>
+          </ul>
+        </li>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+          <a class="nav-link" href="obat.php">
+            <i class="fa fa-fw fa-asterisk"></i>
+            <span class="nav-link-text">Data Obat</span>
+          </a>
         </li>
         
       </ul>

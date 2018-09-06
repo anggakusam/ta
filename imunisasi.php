@@ -53,8 +53,15 @@
       </div> 
             <div class="form-group">
           <label for="jenis_imunisasi">Jenis Imunisasi</label>
-          <input type="text" class="form-control" id="jenis_imunisasi" name="jenis_imunisasi" aria-describedby="emailHelp"  required>
-      </div> 
+          <select class="form-control" name="jenis_imunisasi">
+                <option value="BCG + Polio">BCG + Polio</option>
+                <option value="HB-O">HB-O</option>
+                <option value="Pentabio + Polio">Pentabio + Polio</option>
+                <option value="Pentabio + Polio + Paracetamol">Pentabio + Polio + Paracetamol</option>
+                <option value="Campak Rubela">Campak Rubela</option>
+                <option value="Tetanus Difteri">Tetanus Difteri</option>
+            </select>
+          </div> 
               <div class="form-group">
           <label for="tgl_lahir_bayi">Tanggal Lahir Bayi</label>
           <input type="date" class="form-control" id="tgl_lahir_bayi" name="tgl_lahir_bayi" aria-describedby="emailHelp"  required>

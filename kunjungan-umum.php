@@ -39,16 +39,45 @@
           <input type="text" class="form-control" id="keluhan" name="keluhan" aria-describedby="emailHelp" required>
       </div> 
             <div class="form-group">
-          <label for="terapi">Terapi</label>
-          <input type="text" class="form-control" id="terapi" name="terapi" aria-describedby="emailHelp" required>
-      </div> 
+          <label for="terapi">Obat</label>
+              <select class="form-control" name="terapi">
+                <option value="Sirup">Sirup</option>
+                <option value="Tablet">Tablet</option>
+                <option value="Salep">Salep</option>
+                <option value="Pil">Pil</option>
+                <option value="Kapsul">Kapsul</option>
+            </select>
+            </div>
             <div class="form-group">
+            <select class="form-control" name="terapi">
+                <option value="Sirup">Sirup</option>
+                <option value="Tablet">Tablet</option>
+                <option value="Salep">Salep</option>
+                <option value="Pil">Pil</option>
+                <option value="Kapsul">Kapsul</option>
+            </select>
+            </div>
+            <div class="form-group">
+            <select class="form-control" name="terapi">
+                <option value="Sirup">Sirup</option>
+                <option value="Tablet">Tablet</option>
+                <option value="Salep">Salep</option>
+                <option value="Pil">Pil</option>
+                <option value="Kapsul">Kapsul</option>
+            </select>
+            </div>
+         
+      <div class="form-group">
+          <label for="biaya_berobat">Biaya Berobat</label>
+          <input type="text" class="form-control" id="biaya_berobat" name="biaya_berobat" aria-describedby="emailHelp"  required>
+      </div> 
+      <div class="form-group">
           <label for="keterangan">Keterangan</label>
           <input type="text" class="form-control" id="keterangan" name="keterangan" aria-describedby="emailHelp"  required>
       </div> 
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Simpan</button>
 
-                
+
           <!-- Simpan Modal -->
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">

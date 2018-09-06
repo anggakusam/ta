@@ -57,7 +57,9 @@
       </div> 
       <div class="form-group">
           <label for="tindakan">Tindakan</label>
-            <input type="text" class="form-control"  id="tindakan" name="tindakan" required>
+          <select class="form-control" name="tindakan">
+                <option value="Trimester 1">Trimester 1</option>
+            </select>
       </div> 
       <div class="form-group">
           <label for="keterangan">Keterangan</label>

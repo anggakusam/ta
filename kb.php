@@ -45,7 +45,15 @@
       </div> 
             <div class="form-group">
           <label for="metode_kb">Metode KB</label>
-          <input type="text" class="form-control" id="metode_kb" name="metode_kb" required>
+          <select class="form-control" name="metode_kb">
+                <option value="Cyclo">Cyclo ( suntik 1 bulan )</option>
+                <option value="Depo">Depo ( Suntik 3 bulan )</option>
+                <option value="Pil Laktasi">Pil Laktasi</option>
+                <option value="Pil KB: Trinordiol">Pil KB: Trinordiol</option>
+                <option value="Pil KAB">PIL KAB</option>
+                <option value="Andalan">Andalan</option>
+                <option value="IUDO COPPERT">IUDO COPPERT</option>
+            </select>
       </div>
             <div class="form-group">
           <label for="jadwal_kunjungan_ulang">Jadwal Kunjungan Ulang</label>
