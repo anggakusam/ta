@@ -59,7 +59,7 @@
       <div class="form-group">
           <label for="tindakan">Tindakan</label>
           <select class="form-control" name="tindakan">
-                <option value="Trimester 1">Trimester 1: Asam Folat 30 </option>
+                <option value="Trimester 1: Asam Folat 30">Trimester 1: Asam Folat 30 </option>
                 <option value="Trimester 1: Asam Folat 30 + obat mual">Trimester 1: Asam Folat 30 + obat mual </option>
                 <option value="Trimester 1: Asam Folat 30 + obat mual + Vit C">Trimester 1: Asam Folat 30 + obat mual + Vit C </option>
                 <option value="Trimester 2: Hufabion 20 + Calcifar 10">Trimester 2: Hufabion 20 + Calcifar 10 </option>
