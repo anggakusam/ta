@@ -15,7 +15,7 @@
 
   <div class="content-wrapper">
     <div class="container-fluid">
-  <h2>Data Obat</h2>
+  <h2>Data Keuangan</h2>
     <table id='tablePasien' class='display'>
       <thead>
         <tr>
@@ -24,9 +24,10 @@
           <th>No Reg</th>
           <th>Nama</th>
           <th>Jenis Berobat</th>
+          <th>Tindakan</th>
           <th>Biaya Berobat</th>
           <th>Biaya Obat</th>
-          <th>Total Bayar</th>
+          <th>Total</th>
           <th>Aksi</th>
         </tr>
       </thead>
@@ -49,6 +50,7 @@
                 <td>". $data['no_reg'] ."</td>
                 <td>". $data['nama'] ."</td>
                 <td>". $data['jenis_berobat'] ."</td>
+                <td>". $data['tindakan'] ."</td>
                 <td>". $data['biaya_berobat'] ."</td>
                 <td>". $data['biaya_obat'] ."</td>
                 <td>". $data['total_harga'] ."</td>

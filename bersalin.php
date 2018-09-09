@@ -1,3 +1,4 @@
+<?php include "koneksi.php"; ?>
 <html>
 <head>
   <!-- KOMPONEN HEAD-->
@@ -42,6 +43,44 @@
           <label for="diagnosa">Diagnosa</label>
           <input type="text" class="form-control" id="diagnosa" name="diagnosa" aria-describedby="emailHelp" required>
       </div> 
+      <div class="form-group">
+          <label for="obat">Obat</label>
+            <select class="form-control" name="obat1">
+            <option value="-">-</option>
+              <?php 
+                $query = "select nama_obat, harga_obat from obat order by nama_obat";
+                $sql1 = mysqli_query($con, $query);
+
+                while($data = mysqli_fetch_array($sql1)){
+                  echo "<option value='".$data['nama_obat']."-".$data['harga_obat']."'>".$data['nama_obat']."</option>";
+                }
+              ?>
+            </select>
+        </div>
+        <div class="form-group">
+            <select class="form-control" name="obat2">
+            <option value="-">-</option>
+              <?php 
+                $sql2 = mysqli_query($con, $query);
+
+                while($data = mysqli_fetch_array($sql2)){
+                  echo "<option value='".$data['nama_obat']."-".$data['harga_obat']."'>".$data['nama_obat']."</option>";
+                }
+              ?>
+            </select>
+        </div>
+        <div class="form-group">
+            <select class="form-control" name="obat3">
+            <option value="-">-</option>
+              <?php 
+                $sql3 = mysqli_query($con, $query);
+
+                while($data = mysqli_fetch_array($sql3)){
+                  echo "<option value='".$data['nama_obat']."-".$data['harga_obat']."'>".$data['nama_obat']."</option>";
+                }
+              ?>
+            </select>
+        </div>
             <div class="form-group">
           <label for="jam_lahir">Jam Lahir</label>
           <input type="datetime-local" class="form-control" id="jam_lahir" name="jam_lahir" required>
@@ -66,6 +105,10 @@
               <div class="form-group">
           <label for="penolong">Penolong</label>
           <input type="text" class="form-control" id="penolong" name="penolong" aria-describedby="emailHelp"  required>
+      </div> 
+      <div class="form-group">
+          <label for="biaya_berobat">Biaya Berobat</label>
+          <input type="text" class="form-control" id="biaya_berobat" name="biaya_berobat" aria-describedby="emailHelp"  required>
       </div> 
 
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Simpan</button>

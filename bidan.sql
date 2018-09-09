@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 04, 2018 at 05:59 AM
+-- Generation Time: Sep 09, 2018 at 09:45 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -32,21 +32,22 @@ CREATE TABLE IF NOT EXISTS `antenatal_care` (
   `no_reg` int(4) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `diagnosa` varchar(50) NOT NULL,
-  `berat_badan` int(3) NOT NULL,
-  `tekanan_darah` varchar(12) NOT NULL,
-  `haid_terakhir` date NOT NULL,
-  `taksiran_persalinan` date NOT NULL,
-  `tindakan` varchar(50) NOT NULL,
-  `keterangan` text NOT NULL,
+  `berat_badan` int(3) DEFAULT NULL,
+  `tekanan_darah` varchar(12) DEFAULT NULL,
+  `haid_terakhir` date DEFAULT NULL,
+  `taksiran_persalinan` date DEFAULT NULL,
+  `tindakan` varchar(50) DEFAULT NULL,
+  `obat` varchar(50) DEFAULT NULL,
+  `keterangan` text,
   PRIMARY KEY (`id_antenatal`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `antenatal_care`
 --
 
-INSERT INTO `antenatal_care` (`id_antenatal`, `tgl_kunjungan`, `no_reg`, `nama`, `diagnosa`, `berat_badan`, `tekanan_darah`, `haid_terakhir`, `taksiran_persalinan`, `tindakan`, `keterangan`) VALUES
-(2, '2018-08-28', 1, 'Angga', 'Amenorrhea', 70, '110/90', '2018-08-15', '2018-09-14', 'Lahiran', 'Lahiran sebentar lagi');
+INSERT INTO `antenatal_care` (`id_antenatal`, `tgl_kunjungan`, `no_reg`, `nama`, `diagnosa`, `berat_badan`, `tekanan_darah`, `haid_terakhir`, `taksiran_persalinan`, `tindakan`, `obat`, `keterangan`) VALUES
+(5, '2018-09-09', 5, 'Nisrina', 'Amenorrhea', 63, '110/90', '2018-08-15', '2018-12-15', 'Trimester 3: Alinammin F 5', ',', '1x Sehari');
 
 -- --------------------------------------------------------
 
@@ -68,14 +69,14 @@ CREATE TABLE IF NOT EXISTS `imunisasi` (
   `jadwal_kunjungan_ulang` date NOT NULL,
   `keterangan` text NOT NULL,
   PRIMARY KEY (`id_imunisasi`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `imunisasi`
 --
 
 INSERT INTO `imunisasi` (`id_imunisasi`, `tgl_kunjungan`, `no_reg`, `nama`, `nama_bayi`, `berat_badan_bayi`, `lingkar_kepala_bayi`, `suhu`, `jenis_imunisasi`, `tgl_lahir_bayi`, `jadwal_kunjungan_ulang`, `keterangan`) VALUES
-(5, '2018-08-28', 1, 'Angga', 'Gigi Hadid', 8.70, 18.62, 27.30, 'Polio', '2014-08-15', '2018-09-01', 'anti biotiknya habiskan');
+(9, '2018-09-09', 3, 'Mimin Mintarsih', 'Alfina', 9.21, 18.62, 23.30, 'Tetanus Difteri', '2015-01-05', '2019-09-09', '-');
 
 -- --------------------------------------------------------
 
@@ -94,14 +95,14 @@ CREATE TABLE IF NOT EXISTS `kb` (
   `jadwal_kunjungan_ulang` date NOT NULL,
   `keterangan` text NOT NULL,
   PRIMARY KEY (`id_kb`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `kb`
 --
 
 INSERT INTO `kb` (`id_kb`, `tgl_kunjungan`, `no_reg`, `nama`, `berat_badan`, `tekanan_darah`, `metode_kb`, `jadwal_kunjungan_ulang`, `keterangan`) VALUES
-(2, '2018-08-28', 2, 'Wildan', 63, '110/90', 'Normal', '2018-09-01', 'Obatnya habiskan');
+(5, '2018-09-09', 4, 'Atin', 70, '110/90', 'IUDO COPPERT', '2020-09-09', 'Jangan terlalu Cape');
 
 -- --------------------------------------------------------
 
@@ -118,15 +119,14 @@ CREATE TABLE IF NOT EXISTS `kunjungan_umum` (
   `terapi` varchar(50) NOT NULL,
   `keterangan` text NOT NULL,
   PRIMARY KEY (`id_kunjungan`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data for table `kunjungan_umum`
 --
 
 INSERT INTO `kunjungan_umum` (`id_kunjungan`, `tgl_kunjungan`, `no_reg`, `nama`, `keluhan`, `terapi`, `keterangan`) VALUES
-(4, '2018-08-28', 2, 'Wildan', 'Mules', 'Diberi Antibiotik', 'Obatnya habiskan'),
-(5, '2018-09-04', 3, 'Mimin Mintarsih', 'Mules', 'Diberi Antibiotik', 'Obatnya habiskan');
+(14, '2018-09-09', 1, 'Rostini', 'Keluar Darah', 'Antimo,Intunal F,Inzana', '2x Sehari');
 
 -- --------------------------------------------------------
 
@@ -164,12 +164,24 @@ CREATE TABLE IF NOT EXISTS `pembayaran` (
   `tgl_kunjungan` date NOT NULL,
   `no_reg` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `jenis_berobat` int(20) DEFAULT NULL,
+  `jenis_berobat` varchar(50) DEFAULT NULL,
+  `tindakan` varchar(50) NOT NULL,
   `biaya_berobat` int(7) DEFAULT NULL,
   `biaya_obat` int(7) DEFAULT NULL,
   `total_harga` int(8) DEFAULT NULL,
   PRIMARY KEY (`id_pembayaran`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+
+--
+-- Dumping data for table `pembayaran`
+--
+
+INSERT INTO `pembayaran` (`id_pembayaran`, `tgl_kunjungan`, `no_reg`, `nama`, `jenis_berobat`, `tindakan`, `biaya_berobat`, `biaya_obat`, `total_harga`) VALUES
+(9, '2018-09-09', 1, 'Rostini', 'Kunjungan Umum', 'Antimo,Intunal F,Inzana', 75000, 12000, 87000),
+(10, '2018-09-09', 2, 'Lisa', 'Melahirkan', '-', 650000, 4000, 654000),
+(11, '2018-09-09', 3, 'Mimin Mintarsih', 'Imunisasi', 'Tetanus Difteri', 60000, 0, 60000),
+(12, '2018-09-09', 4, 'Atin', 'KB', 'IUDO COPPERT', 250000, 0, 250000),
+(13, '2018-09-09', 5, 'Nisrina', 'Antenatal Care', 'Trimester 3: Alinammin F 5', 30000, 0, 30000);
 
 -- --------------------------------------------------------
 
@@ -185,16 +197,18 @@ CREATE TABLE IF NOT EXISTS `pendaftaran` (
   `no_hp` varchar(13) NOT NULL,
   `tgl_daftar` date NOT NULL,
   PRIMARY KEY (`no_reg`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `pendaftaran`
 --
 
 INSERT INTO `pendaftaran` (`no_reg`, `nama`, `tgl_lahir`, `alamat`, `no_hp`, `tgl_daftar`) VALUES
-(1, 'Angga', '1996-09-01', 'Jl.Atletik II no. 26', '085720474799', '2018-08-23'),
-(2, 'Wildan', '1995-01-01', ' Jl. Sesama', '089928232716', '2018-08-23'),
-(3, 'Mimin Mintarsih', '1963-07-14', ' Jl. Permata Biru III', '085715163620', '2018-09-04');
+(1, 'Rostini', '1996-09-01', 'Jl.Atletik II no. 26', '085720474799', '2018-08-23'),
+(2, 'Lisa', '1995-01-01', ' Jl. Sesama', '089928232716', '2018-08-23'),
+(3, 'Mimin Mintarsih', '1963-07-14', ' Jl. Permata Biru III', '085715163620', '2018-09-04'),
+(4, 'Atin', '1996-09-05', ' Jl. Sesama 456', '085745632154', '2018-09-09'),
+(5, 'Nisrina', '1996-09-25', 'Jl. Sindang Laya 90 ', '085214759635', '2018-09-09');
 
 -- --------------------------------------------------------
 
@@ -209,20 +223,21 @@ CREATE TABLE IF NOT EXISTS `persalinan` (
   `nama` varchar(50) NOT NULL,
   `taksiran_persalinan` datetime NOT NULL,
   `diagnosa` varchar(50) NOT NULL,
+  `obat` varchar(50) NOT NULL,
   `jam_lahir` datetime DEFAULT NULL,
   `jenis_kelamin` varchar(12) DEFAULT NULL,
   `berat_badan` float(5,2) DEFAULT NULL,
   `panjang_badan` float(5,2) DEFAULT NULL,
   `penolong` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id_persalinan`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `persalinan`
 --
 
-INSERT INTO `persalinan` (`id_persalinan`, `tgl_kunjungan`, `no_reg`, `nama`, `taksiran_persalinan`, `diagnosa`, `jam_lahir`, `jenis_kelamin`, `berat_badan`, `panjang_badan`, `penolong`) VALUES
-(2, '2018-08-28', 1, 'Angga', '2018-08-28 01:50:00', 'Hamil', '2018-08-28 10:50:00', 'Laki - Laki', 3.90, 37.50, 'Hikmat');
+INSERT INTO `persalinan` (`id_persalinan`, `tgl_kunjungan`, `no_reg`, `nama`, `taksiran_persalinan`, `diagnosa`, `obat`, `jam_lahir`, `jenis_kelamin`, `berat_badan`, `panjang_badan`, `penolong`) VALUES
+(4, '2018-09-09', 2, 'Lisa', '2018-09-10 15:10:00', 'Sungsang', 'Intunal F,,', '2018-09-11 02:30:00', 'Perempuan', 3.90, 37.50, 'Wulan');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -1,3 +1,4 @@
+<?php include "koneksi.php"; ?>
 <html>
 <head>
   <!-- KOMPONEN HEAD-->
@@ -58,9 +59,44 @@
       <div class="form-group">
           <label for="tindakan">Tindakan</label>
           <select class="form-control" name="tindakan">
-                <option value="Trimester 1">Trimester 1</option>
+                <option value="Trimester 1">Trimester 1: Asam Folat 30 </option>
+                <option value="Trimester 1: Asam Folat 30 + obat mual">Trimester 1: Asam Folat 30 + obat mual </option>
+                <option value="Trimester 1: Asam Folat 30 + obat mual + Vit C">Trimester 1: Asam Folat 30 + obat mual + Vit C </option>
+                <option value="Trimester 2: Hufabion 20 + Calcifar 10">Trimester 2: Hufabion 20 + Calcifar 10 </option>
+                <option value="Trimester 2: Etabion 30 + Erkade 10">Trimester 2: Etabion 30 + Erkade 10 </option>
+                <option value="Trimester 2: Gestiamin Z + Calcifar 20">Trimester 2: Gestiamin Z + Calcifar 20 </option>
+                <option value="Trimester 2: Fermia 30 + Licokalk 10">Trimester 2: Fermia 30 + Licokalk 10 </option>
+                <option value="Trimester 3: Gestiamin Z 10">Trimester 3: Gestiamin Z 10 </option>
+                <option value="Trimester 3: Neurodex 10">Trimester 3: Neurodex 10 </option>
+                <option value="Trimester 3: Alinammin F 5">Trimester 3: Alinammin F 5 </option>
             </select>
       </div> 
+      <div class="form-group">
+          <label for="obat">Obat</label>
+            <select class="form-control" name="obat1">
+            <option value="-">-</option>
+              <?php 
+                $query = "select nama_obat, harga_obat from obat order by nama_obat";
+                $sql1 = mysqli_query($con, $query);
+
+                while($data = mysqli_fetch_array($sql1)){
+                  echo "<option value='".$data['nama_obat']."-".$data['harga_obat']."'>".$data['nama_obat']."</option>";
+                }
+              ?>
+            </select>
+        </div>
+        <div class="form-group">
+            <select class="form-control" name="obat2">
+            <option value="-">-</option>
+              <?php 
+                $sql2 = mysqli_query($con, $query);
+
+                while($data = mysqli_fetch_array($sql2)){
+                  echo "<option value='".$data['nama_obat']."-".$data['harga_obat']."'>".$data['nama_obat']."</option>";
+                }
+              ?>
+            </select>
+        </div>
       <div class="form-group">
           <label for="keterangan">Keterangan</label>
             <input type="text" class="form-control"  id="keterangan" name="keterangan" required>

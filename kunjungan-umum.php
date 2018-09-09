@@ -42,6 +42,7 @@
         <div class="form-group">
           <label for="terapi">Obat</label>
             <select class="form-control" name="terapi1">
+            <option value="-">-</option>
               <?php 
                 $query = "select nama_obat, harga_obat from obat order by nama_obat";
                 $sql1 = mysqli_query($con, $query);
@@ -54,6 +55,7 @@
         </div>
         <div class="form-group">
             <select class="form-control" name="terapi2">
+            <option value="-">-</option>
               <?php 
                 $sql2 = mysqli_query($con, $query);
 
@@ -65,6 +67,7 @@
         </div>
         <div class="form-group">
             <select class="form-control" name="terapi3">
+            <option value="-">-</option>
               <?php 
                 $sql3 = mysqli_query($con, $query);
 

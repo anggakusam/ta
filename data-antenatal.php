@@ -28,6 +28,7 @@
             <th>Haid Terakhir</th>
             <th>Taksiran Persalinan</th>
             <th>Tindakan</th>
+            <th>Obat</th>
             <th>Keterangan</th>
           </tr>
         </thead>
@@ -55,6 +56,7 @@
                   <td>". $data['haid_terakhir'] ."</td>
                   <td>". $data['taksiran_persalinan'] ."</td>
                   <td>". $data['tindakan'] ."</td>
+                  <td>". $data['obat'] ."</td>
                   <td>". $data['keterangan'] ."</td>
               </tr>
         ";
