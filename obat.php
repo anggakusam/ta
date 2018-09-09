@@ -12,7 +12,7 @@
  
   <div class="content-wrapper">
     <div class="container-fluid">
-    <button a href="data-obat.php">Lihat Data</button>
+    <a href="data-obat.php"><button>Lihat Data</button></a>
     <!-- ISI KONTEN -->
    
     <div class="form-group">

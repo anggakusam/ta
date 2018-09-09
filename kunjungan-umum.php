@@ -1,3 +1,4 @@
+<?php include "koneksi.php"; ?>
 <html>
 <head>
   <!-- KOMPONEN HEAD-->
@@ -38,34 +39,41 @@
           <label for="keluhan">Keluhan</label>
           <input type="text" class="form-control" id="keluhan" name="keluhan" aria-describedby="emailHelp" required>
       </div> 
-            <div class="form-group">
+        <div class="form-group">
           <label for="terapi">Obat</label>
-              <select class="form-control" name="terapi">
-                <option value="Sirup">Sirup</option>
-                <option value="Tablet">Tablet</option>
-                <option value="Salep">Salep</option>
-                <option value="Pil">Pil</option>
-                <option value="Kapsul">Kapsul</option>
+            <select class="form-control" name="terapi1">
+              <?php 
+                $query = "select nama_obat, harga_obat from obat order by nama_obat";
+                $sql1 = mysqli_query($con, $query);
+
+                while($data = mysqli_fetch_array($sql1)){
+                  echo "<option value='".$data['nama_obat']."-".$data['harga_obat']."'>".$data['nama_obat']."</option>";
+                }
+              ?>
             </select>
-            </div>
-            <div class="form-group">
-            <select class="form-control" name="terapi">
-                <option value="Sirup">Sirup</option>
-                <option value="Tablet">Tablet</option>
-                <option value="Salep">Salep</option>
-                <option value="Pil">Pil</option>
-                <option value="Kapsul">Kapsul</option>
+        </div>
+        <div class="form-group">
+            <select class="form-control" name="terapi2">
+              <?php 
+                $sql2 = mysqli_query($con, $query);
+
+                while($data = mysqli_fetch_array($sql2)){
+                  echo "<option value='".$data['nama_obat']."-".$data['harga_obat']."'>".$data['nama_obat']."</option>";
+                }
+              ?>
             </select>
-            </div>
-            <div class="form-group">
-            <select class="form-control" name="terapi">
-                <option value="Sirup">Sirup</option>
-                <option value="Tablet">Tablet</option>
-                <option value="Salep">Salep</option>
-                <option value="Pil">Pil</option>
-                <option value="Kapsul">Kapsul</option>
+        </div>
+        <div class="form-group">
+            <select class="form-control" name="terapi3">
+              <?php 
+                $sql3 = mysqli_query($con, $query);
+
+                while($data = mysqli_fetch_array($sql3)){
+                  echo "<option value='".$data['nama_obat']."-".$data['harga_obat']."'>".$data['nama_obat']."</option>";
+                }
+              ?>
             </select>
-            </div>
+        </div>
          
       <div class="form-group">
           <label for="biaya_berobat">Biaya Berobat</label>

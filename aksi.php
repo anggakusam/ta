@@ -53,28 +53,45 @@ break;
 
 
 case"umum":
-  
+  $t1 = explode('-', $_POST['terapi1']);
+  $t2 = explode('-', $_POST['terapi2']);
+  $t3 = explode('-', $_POST['terapi3']);
+
+  $terapi = $t1[0] .",". $t2[0] .",". $t3[0];
+  $harga = $t1[1] + $t2[1] + $t3[1];
   $tgl_kunjungan = date("Y-m-d");
   $no_reg = $_POST['no_reg'];
   $nama = $_POST['nama'];
   $keluhan = $_POST['keluhan'];
-  $terapi = $_POST['terapi'];
   $keterangan = $_POST['keterangan'];
+  $biaya_berobat = $_POST['biaya_berobat'];
+  $total = $biaya_berobat + $harga;
 
-mysqli_query($con, "insert into kunjungan_umum values(
-  '',
-  '$tgl_kunjungan',
-  '$no_reg',
-  '$nama',
-  '$keluhan',
-  '$terapi',
-  '$keterangan'
-  )")
-or die(mysqli_error($con));
-  
-  
-header("location:index.php");
+  mysqli_query($con, "insert into kunjungan_umum values(
+    '',
+    '$tgl_kunjungan',
+    '$no_reg',
+    '$nama',
+    '$keluhan',
+    '$terapi',
+    '$keterangan'
+    )")
+  or die(mysqli_error($con));
 
+  mysqli_query($con, "insert into pembayaran values(
+    '',
+    '$tgl_kunjungan',
+    '$no_reg',
+    '$nama',
+    'kunjungan umum',
+    '$biaya_berobat',
+    '$harga',
+    '$total'
+    )")
+  or die(mysqli_error($con));
+    
+    
+  header("location:index.php");
 break;
 
 
