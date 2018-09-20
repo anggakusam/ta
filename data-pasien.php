@@ -26,6 +26,7 @@
             <th>No HP</th>
             <th>Tanggal Daftar</th>
             <th>Rekap Medik</th>
+            <th>Ubah</th>
           </tr>
         </thead>
         <tbody>
@@ -51,8 +52,17 @@
                   <td> 
                     <Center>
                    
-                      <a href=edit-data-pasien.php>
+                      <a href='#'#>
                         <i class='fa fa-address-card'></i>
+                      </a>
+        
+                      </center>
+                  </td>
+                  <td> 
+                    <Center>
+                   
+                      <a href='edit-data-pasien.php?no_reg=".$data['no_reg']."'>
+                        <i class='fa fa-pencil'></i>
                       </a>
         
                       </center>

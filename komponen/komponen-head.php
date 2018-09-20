@@ -11,6 +11,7 @@
   <meta name="author" content="">
   
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <!-- Custom fonts for this template-->
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">

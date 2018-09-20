@@ -367,19 +367,29 @@ break;
 
 case"edit-pasien":
 
-        $sql = "update data_location set 
-        nama = '".$_POST['nama']."',
-        tgl_lahir = '".$_POST['tgl_lahir']."',
-        alamat = '".$_POST['alamat']."',
-        no_hp = '".$_POST['no_hp']."'
-
-where no_reg = '".$_POST['no_reg']."'";
+  $sql = "update pendaftaran set 
+    nama = '".$_POST['nama']."',
+    tgl_lahir = '".$_POST['tgl_lahir']."',
+    alamat = '".$_POST['alamat']."',
+    no_hp = '".$_POST['no_hp']."'
+    
+    where no_reg = '".$_POST['no_reg']."'";
 
 mysqli_query($con, $sql) 
 or die(mysqli_error($con));
 
+header("location:data-pasien.php");
 
-header("location:index.php");
+break;
+
+case"hapus-data-pasien":
+
+  $sql = "delete from pendaftaran where no_reg = '".$_GET['no_reg']."'";
+
+  mysqli_query($con, $sql) 
+  or die(mysqli_error($con));
+
+  header("location:data-pasien.php");
 
 break;
 
