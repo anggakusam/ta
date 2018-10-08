@@ -50,9 +50,9 @@
                 <option value="Depo">Depo ( Suntik 3 bulan )</option>
                 <option value="Pil Laktasi">Pil Laktasi</option>
                 <option value="Pil KB: Trinordiol">Pil KB: Trinordiol</option>
-                <option value="Pil KAB">PIL KAB</option>
+                <option value="Pil KB">PIL KB</option>
                 <option value="Andalan">Andalan</option>
-                <option value="IUDO COPPERT">IUDO COPPERT</option>
+                <option value="IUD COPPERTY">IUD COPPERTY</option>
             </select>
       </div>
             <div class="form-group">

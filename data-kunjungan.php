@@ -26,6 +26,7 @@
             <th>keluhan</th>
             <th>Terapi</th>
             <th>Keterangan</th>
+            <th>Ubah</th>
           </tr>
         </thead>
         <tbody>
@@ -49,6 +50,15 @@
                   <td>". $data['keluhan'] ."</td>
                   <td>". $data['terapi'] ."</td>
                   <td>". $data['keterangan'] ."</td>
+                  <td> 
+                  <Center>
+                 
+                    <a href='edit-data-kunjungan.php?id_kunjungan=".$data['id_kunjungan']."'>
+                      <i class='fa fa-pencil'></i>
+                    </a>
+      
+                    </center>
+                </td>
               </tr>
         ";
         $nomer++;

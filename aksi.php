@@ -393,6 +393,35 @@ case"hapus-data-pasien":
 
 break;
 
+case"edit-kunjungan":
+
+  $sql = "update kunjungan_umum set 
+    no_reg = '".$_POST['no_reg']."',
+    nama = '".$_POST['nama']."',
+    keluhan = '".$_POST['keluhan']."',
+    keterangan = '".$_POST['keterangan']."'
+    
+    where id_kunjungan = '".$_POST['id_kunjungan']."'";
+
+
+mysqli_query($con, $sql) 
+or die(mysqli_error($con));
+
+header("location:data-kunjungan.php");
+
+break;
+
+case"hapus-data-kunjungan":
+
+  $sql = "delete from kunjungan_umum where id_kunjungan = '".$_GET['id_kunjungan']."'";
+
+  mysqli_query($con, $sql) 
+  or die(mysqli_error($con));
+
+  header("location:data-kunjungan.php");
+
+break;
+
 }
 
 
