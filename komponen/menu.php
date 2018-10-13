@@ -81,6 +81,12 @@
             <li>
               <a href="keuangan.php">Keuangan</a>
             </li>
+            <li>
+              <a href="print/print-laporan.php" target="_blank">
+                <i class="fa fa-fw fa-print"></i>
+                Cetak Laporan
+              </a>
+            </li>
           </ul>
         </li>
         </li>
@@ -115,7 +121,7 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <a class="btn btn-primary" href="aksi.php?aksi=keluar_admin">Logout</a>
           </div>
         </div>
       </div>

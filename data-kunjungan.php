@@ -1,3 +1,9 @@
+<?php
+include "koneksi.php";
+session_start();
+if(isset($_SESSION['admin'])) {
+    
+?>
 <html>
 <head>
   <!-- KOMPONEN HEAD-->
@@ -117,3 +123,10 @@
   
   </body>
 </html>
+
+<?php
+}
+else{
+    header("location:masuk.php");
+}
+?>

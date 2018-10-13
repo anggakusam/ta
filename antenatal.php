@@ -1,3 +1,10 @@
+<?php
+include "koneksi.php";
+session_start();
+if(isset($_SESSION['admin'])) {
+    
+?>
+
 <?php include "koneksi.php"; ?>
 <html>
 <head>
@@ -161,3 +168,10 @@
     </script>
   </body>
 </html>
+
+<?php
+}
+else{
+    header("location:masuk.php");
+}
+?>

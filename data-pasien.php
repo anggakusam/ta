@@ -1,3 +1,10 @@
+<?php
+include "koneksi.php";
+session_start();
+if(isset($_SESSION['admin'])) {
+    
+?>
+
 <html>
 <head>
   <!-- KOMPONEN HEAD-->
@@ -52,7 +59,7 @@
                   <td> 
                     <Center>
                    
-                      <a href='#'#>
+                      <a href='data-rekap-medis.php?no_reg=".$data['no_reg']."'>
                         <i class='fa fa-address-card'></i>
                       </a>
         
@@ -104,3 +111,10 @@
   
   </body>
 </html>
+
+<?php
+}
+else{
+    header("location:masuk.php");
+}
+?>

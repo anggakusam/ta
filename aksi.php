@@ -2,7 +2,39 @@
 include "koneksi.php";
 
 switch($_GET['aksi']){
+
+  case"masuk_admin":
+    session_start();
+		require_once("koneksi.php");
+		$user = mysqli_real_escape_string($con, $_POST['username']);
+		$pass = mysqli_real_escape_string($con, md5(md5($_POST['password'])));  
+		$cekuser = mysqli_query($con, "SELECT * FROM admin WHERE username = '$user'");
+		$jumlah = mysqli_num_rows($cekuser);
+		$hasil = mysqli_fetch_array($cekuser);  
+		if($jumlah == 0) {
+            header('location:masuk.php');
+            
+        } else {
+            if($pass <> $hasil['password']) {
+                header('location:masuk.php');
+                
+            } else {
+                
+                $_SESSION['admin'] = "$user";
+                header('location:data-kunjungan.php');    
+                
+                
+            }	
+		}	
+	break;
+        
+	case"keluar_admin":
+		session_start();
+		unset($_SESSION['admin']);
+		header("location:masuk.php");
+	break;
   
+
   case"daftar":
         
   $nama = $_POST['nama'];
@@ -238,13 +270,13 @@ case"kb":
       if ($_POST['metode_kb'] == 'Pil KB: Trinordiol'){
         $harga = 20000;
       }
-      if ($_POST['metode_kb'] == 'Pil KAB'){
+      if ($_POST['metode_kb'] == 'Pil KB'){
         $harga = 15000;
       }
       if ($_POST['metode_kb'] == 'Andalan'){
         $harga = 20000;
       }
-      if ($_POST['metode_kb'] == 'IUDO COPPERT'){
+      if ($_POST['metode_kb'] == 'IUD COPPERTY'){
         $harga = 250000;
       }
   $jadwal_kunjungan_ulang = $_POST['jadwal_kunjungan_ulang'];
