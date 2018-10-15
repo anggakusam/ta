@@ -30,7 +30,6 @@ if(isset($_SESSION['admin'])) {
           <th>Nama Obat</th>
           <th>Jenis Obat</th>
           <th>Harga Obat</th>
-          <th>Jumlah Obat</th>
           <th>Keterangan</th>
           <th>Aksi</th>
         </tr>
@@ -53,7 +52,6 @@ if(isset($_SESSION['admin'])) {
                 <td>". $data['nama_obat'] ."</td>
                 <td>". $data['jenis_obat'] ."</td>
                 <td>". $data['harga_obat'] ."</td>
-                <td>". $data['jumlah_obat'] ."</td>
                 <td>". $data['keterangan'] ."</td>
                 <td> 
                   <Center>

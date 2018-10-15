@@ -46,10 +46,6 @@ if(isset($_SESSION['admin'])) {
           <input type="text" class="form-control" id="harga_obat" name="harga_obat" aria-describedby="emailHelp" placeholder="Harga Obat" autofocus required>
         </div> 
         <div class="form-group">
-          <label for="jumlah_obat">Jumlah Obat</label>
-          <input type="text" class="form-control" id="jumlah_obat" name="jumlah_obat" aria-describedby="emailHelp" placeholder="Jumlah Obat" autofocus required>
-        </div> 
-        <div class="form-group">
             <label for="keterangan">Keterangan</label>
             <input type="text" class="form-control" id="keterangan" name="keterangan" aria-describedby="emailHelp" placeholder="Keterangan" required>
         </div> 

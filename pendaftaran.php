@@ -31,6 +31,10 @@ if(isset($_SESSION['admin'])) {
           <input type="text" class="form-control" id="nama" name="nama" aria-describedby="emailHelp" placeholder="Masukan Nama" autofocus required>
         </div> 
         <div class="form-group">
+          <label for="nama_suami">Nama Suami</label>
+          <input type="text" class="form-control" id="nama_suami" name="nama_suami" aria-describedby="emailHelp" placeholder="Masukan Nama Suami" autofocus required>
+        </div> 
+        <div class="form-group">
           <label for="tgl_lahir">Tanggal Lahir</label>
           <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir" required>
         </div> 

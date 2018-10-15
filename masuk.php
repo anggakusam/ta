@@ -8,7 +8,7 @@ session_start();
 
 <html>
 <head>
-<title>Dinas Pangan Dan Pertanian</title> 
+<title>Bidan Iyam Siti Purnama, Amd. Keb</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <link rel="shortcut icon" href="../images/iconrpls.png" />

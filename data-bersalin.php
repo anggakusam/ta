@@ -30,6 +30,7 @@ if(isset($_SESSION['admin'])) {
             <th>Tanggal Kunjungan</th>
             <th>No Reg</th>
             <th>Nama</th>
+            <th>Nama Suami</th>
             <th>Taksiran Persalinan</th>
             <th>Diagnosa</th>
             <th>Jam Lahir</th>
@@ -58,6 +59,7 @@ if(isset($_SESSION['admin'])) {
                   <td>". $data['tgl_kunjungan'] ."</td>
                   <td>". $data['no_reg'] ."</td>
                   <td>". $data['nama'] ."</td>
+                  <td>". $data['nama_suami'] ."</td>
                   <td>". $data['taksiran_persalinan'] ."</td>
                   <td>". $data['diagnosa'] ."</td>
                   <td>". $data['jam_lahir'] ."</td>

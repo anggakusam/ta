@@ -27,7 +27,9 @@ if(isset($_SESSION['admin'])) {
         <thead>
           <tr>
             <th>No</th>
+            <th>No Reg</th>
             <th>Nama</th>
+            <th>Nama Suami</th>
             <th>Tanggal lahir</th>
             <th>Alamat</th>
             <th>No HP</th>
@@ -51,7 +53,9 @@ if(isset($_SESSION['admin'])) {
         
               <tr>
                   <td>". $nomer ."</td>
+                  <td>". $data['no_reg'] ."</td>
                   <td>". $data['nama'] ."</td>
+                  <td>". $data['nama_suami'] ."</td>
                   <td>". $data['tgl_lahir'] ."</td>
                   <td>". $data['alamat'] ."</td>
                   <td>". $data['no_hp'] ."</td>

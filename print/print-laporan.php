@@ -169,78 +169,6 @@ $data_kunjungan = $tableHead_kunjungan ."". $tableIsi_kunjungan ."". $tableFoot_
 
 // ISI PDF
 
-$tableHead_bersalin = "
-	<h2>Data Bersalin</h2>
-      <table border='1'>
-        <thead>
-          <tr>
-            <th width='20px'>No</th>
-            <th>Tanggal Kunjungan</th>
-            <th>Nama</th>
-			<th>Diagnosa</th>
-			<th>Tanggal Lahir </th>
-            <th>Jenis Kelamin</th>
-            <th>Berat Badan</th>
-            <th>Panjang Badan</th>
-          </tr>
-        </thead>
-		<tbody>
-
-";
-
-
-$tableIsi_bersalin = "
-
-";
-
-
-$tahun = date("Y");
-$bulan = date("m");
-
-$sql = "select * from persalinan WHERE YEAR(tgl_kunjungan) = $tahun AND MONTH(tgl_kunjungan) = $bulan";
-$query = mysqli_query($con, $sql);
-$nomer = 1;
-if ($query) {
-
-	while ($data = mysqli_fetch_array($query)) {
-	
-	$tableIsi_bersalin .= "
-	
-			<tr>
-				<td>". $nomer ."</td>
-				<td>". $data['tgl_kunjungan'] ."</td>
-				<td>". $data['nama'] ."</td>
-				<td>". $data['diagnosa'] ."</td>
-				<td>". $data['jam_lahir'] ."</td>
-				<td>". $data['jenis_kelamin'] ."</td>
-				<td>". $data['berat_badan'] ."</td>
-				<td>". $data['panjang_badan'] ."</td>
-			</tr>
-	";
-	$nomer++;
-	}
-
-}
-else{
-	$tableIsi_bersalin = "<tr><td colspan='7'>eror nich datanya ga muncul</td></tr>";
-}
-
-
-$tableFoot_bersalin = "
-	
-		
-
-		</tbody>
-		</table>
-";
-
-$data_bersalin = $tableHead_bersalin ."". $tableIsi_bersalin ."". $tableFoot_bersalin;
-
-// ISI PDF SAMPE SINI
-
-
-// ISI PDF
-
 $tableHead_imunisasi = "
 	<h2>Data Imunisasi</h2>
       <table border='1'>
@@ -249,8 +177,8 @@ $tableHead_imunisasi = "
             <th width='20px'>No</th>
             <th>Tanggal Kunjungan</th>
             <th>Nama</th>
-			<th>Nama Bayi</th>
-			<th>Berat Badan </th>
+						<th>Nama Bayi</th>
+						<th>Berat Badan </th>
             <th>Lingkar Kepala</th>
             <th>Jenis Imunisasi</th>
             <th>Tanggal Lahir Bayi</th>
@@ -323,8 +251,8 @@ $tableHead_bersalin = "
             <th width='20px'>No</th>
             <th>Tanggal Kunjungan</th>
             <th>Nama</th>
-			<th>Diagnosa</th>
-			<th>Tanggal Lahir </th>
+						<th>Taksiran Persalinan</th>
+						<th>Tanggal Lahir </th>
             <th>Jenis Kelamin</th>
             <th>Berat Badan</th>
             <th>Panjang Badan</th>
@@ -356,7 +284,7 @@ if ($query) {
 				<td>". $nomer ."</td>
 				<td>". $data['tgl_kunjungan'] ."</td>
 				<td>". $data['nama'] ."</td>
-				<td>". $data['diagnosa'] ."</td>
+				<td>". $data['taksiran_persalinan'] ."</td>
 				<td>". $data['jam_lahir'] ."</td>
 				<td>". $data['jenis_kelamin'] ."</td>
 				<td>". $data['berat_badan'] ."</td>

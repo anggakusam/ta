@@ -5,6 +5,7 @@
     $pasien = mysqli_fetch_array($sql);
     $data = array(
         'nama' => $pasien['nama'],
+        'nama_suami' => $pasien['nama_suami'],
         'tgl_lahir'=> $pasien['tgl_lahir'],
         'alamat' => $pasien['alamat'],
         'no_hp' => $pasien['no_hp']

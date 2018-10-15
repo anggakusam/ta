@@ -38,6 +38,7 @@ switch($_GET['aksi']){
   case"daftar":
         
   $nama = $_POST['nama'];
+  $nama_suami = $_POST['nama_suami'];
   $tgl_lahir = $_POST['tgl_lahir'];
   $alamat = $_POST['alamat'];
   $no_hp = $_POST['no_hp'];
@@ -46,6 +47,7 @@ switch($_GET['aksi']){
 mysqli_query($con, "insert into pendaftaran values(
   '',
   '$nama',
+  '$nama_suami',
   '$tgl_lahir',
   '$alamat',
   '$no_hp',
@@ -54,7 +56,7 @@ mysqli_query($con, "insert into pendaftaran values(
 or die(mysqli_error($con));
   
   
-header("location:index.php");
+header("location:data-pasien.php");
   
 
 break;
@@ -64,7 +66,6 @@ case"obat":
   $nama_obat = $_POST['nama_obat'];
   $jenis_obat = $_POST['jenis_obat'];
   $harga_obat = $_POST['harga_obat'];
-  $jumlah_obat = $_POST['jumlah_obat'];
   $keterangan = $_POST['keterangan'];
 
 mysqli_query($con, "insert into obat values(
@@ -72,13 +73,12 @@ mysqli_query($con, "insert into obat values(
   '$nama_obat',
   '$jenis_obat',
   '$harga_obat',
-  '$jumlah_obat',
   '$keterangan'
   )")
 or die(mysqli_error($con));
   
   
-header("location:index.php");
+header("location:data-obat.php");
   
 
 break;
@@ -124,21 +124,16 @@ case"umum":
   or die(mysqli_error($con));
     
     
-  header("location:index.php");
+  header("location:data-kunjungan.php");
 break;
 
 
 case"bersalin":
-  
-  $t1 = explode('-', $_POST['obat1']);
-  $t2 = explode('-', $_POST['obat2']);
-  $t3 = explode('-', $_POST['obat3']);
 
-  $obat = $t1[0] .",". $t2[0] .",". $t3[0];
-  $harga = $t1[1] + $t2[1] + $t3[1];
   $tgl_kunjungan = date("Y-m-d");
   $no_reg = $_POST['no_reg'];
   $nama = $_POST['nama'];
+  $nama_suami = $_POST['nama_suami'];
   $taksiran_persalinan = $_POST['taksiran_persalinan'];
   $diagnosa = $_POST['diagnosa'];
   $jam_lahir = $_POST['jam_lahir'];
@@ -147,16 +142,16 @@ case"bersalin":
   $panjang_badan = $_POST['panjang_badan'];
   $penolong = $_POST['penolong'];
   $biaya_berobat = $_POST['biaya_berobat'];
-  $total = $biaya_berobat + $harga;
+  $total = $biaya_berobat;
 
   mysqli_query($con, "insert into persalinan values(
     '',
     '$tgl_kunjungan',
     '$no_reg',
     '$nama',
+    '$nama_suami',
     '$taksiran_persalinan',
     '$diagnosa',
-    '$obat',
     '$jam_lahir',
     '$jenis_kelamin',
     '$berat_badan',
@@ -173,12 +168,12 @@ case"bersalin":
     'Melahirkan',
     '-',
     '$biaya_berobat',
-    '$harga',
+    '-',
     '$total'
     )")
     or die(mysqli_error($con));
   
-header("location:index.php");
+header("location:data-bersalin.php");
   
 break;
 
@@ -244,7 +239,7 @@ mysqli_query($con, "insert into pembayaran values(
 or die(mysqli_error($con));
   
   
-header("location:index.php");
+header("location:data-imunisasi.php");
   
 
 break;
@@ -309,7 +304,7 @@ mysqli_query($con, "insert into pembayaran values(
 or die(mysqli_error($con));
   
   
-header("location:index.php");
+header("location:data-kb.php");
   
 
 break;
@@ -392,7 +387,7 @@ mysqli_query($con, "insert into pembayaran values(
 or die(mysqli_error($con));
   
   
-header("location:index.php");
+header("location:data-antenatal.php");
   
 
 break;
@@ -401,6 +396,7 @@ case"edit-pasien":
 
   $sql = "update pendaftaran set 
     nama = '".$_POST['nama']."',
+    nama_suami = '".$_POST['nama_suami']."',
     tgl_lahir = '".$_POST['tgl_lahir']."',
     alamat = '".$_POST['alamat']."',
     no_hp = '".$_POST['no_hp']."'
@@ -431,6 +427,7 @@ case"edit-kunjungan":
     no_reg = '".$_POST['no_reg']."',
     nama = '".$_POST['nama']."',
     keluhan = '".$_POST['keluhan']."',
+    terapi = '".$_POST['terapi']."',
     keterangan = '".$_POST['keterangan']."'
     
     where id_kunjungan = '".$_POST['id_kunjungan']."'";

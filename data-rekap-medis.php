@@ -128,9 +128,10 @@ if(isset($_SESSION['admin'])) {
           <th>No</th>
           <th>Tanggal Kunjungan</th>
           <th>Taksiran Persalinan</th>
-          <th>Diagnosa</th>
-          <th>Obat</th>
-          <th>Jam Lahir</th>
+          <th>Tanggal Lahir</th>
+          <th>Jenis Kelamin</th>
+          <th>Berat Badan</th>
+          <th>Panjang Badan</th>
         </tr>
       </thead>
       <tbody>
@@ -138,7 +139,7 @@ if(isset($_SESSION['admin'])) {
   <?php
 
   
-  $sqlTiga = "select tgl_kunjungan, taksiran_persalinan, diagnosa, obat, jam_lahir from persalinan where no_reg = ".$_GET['no_reg']."
+  $sqlTiga = "select tgl_kunjungan, taksiran_persalinan, jam_lahir, jenis_kelamin, berat_badan, panjang_badan from persalinan where no_reg = ".$_GET['no_reg']."
   ";
   $queryTiga = mysqli_query($con, $sqlTiga);
   $nomer = 1;
@@ -152,9 +153,10 @@ if(isset($_SESSION['admin'])) {
                 <td>". $nomer ."</td>
                 <td>". $data['tgl_kunjungan'] ."</td>
                 <td>". $data['taksiran_persalinan'] ."</td>
-                <td>". $data['diagnosa'] ."</td>
-                <td>". $data['obat'] ."</td>
                 <td>". $data['jam_lahir'] ."</td>
+                <td>". $data['jenis_kelamin'] ."</td>
+                <td>". $data['berat_badan'] ."</td>
+                <td>". $data['panjang_badan'] ."</td>
             </tr>
       ";
       $nomer++;

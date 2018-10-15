@@ -56,7 +56,7 @@ $pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8',
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Nicola Asuni');
-$pdf->SetTitle('TCPDF Example 003');
+$pdf->SetTitle('Laporan Rekap Medis');
 $pdf->SetSubject('TCPDF Tutorial');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
 
@@ -110,15 +110,15 @@ $sqlsat = "select
   
 
   $judul = "
-  No. Registrasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ".$tampilsat['no_reg']."
+  &nbsp;&nbsp;No. Registrasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ".$tampilsat['no_reg']."
   <br>
-  Nama &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : ".$tampilsat['nama']."
+  Nama &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : ".$tampilsat['nama']."
   <br>
   Tanggal Lahir &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ".$tampilsat['tgl_lahir']."
   <br>
-  Alamat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp: ".$tampilsat['alamat']."
+  Alamat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : ".$tampilsat['alamat']."
   <br>
-  No HP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp: ".$tampilsat['no_hp']."
+  No HP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : ".$tampilsat['no_hp']."
   <br>
   <br>
   ";
@@ -130,12 +130,12 @@ $tableHead_kunjungan = "
       <table border='1'>
         <thead>
           <tr>
-            <th width='20px'>No</th>
-            <th>Tanggal Kunjungan</th>
-            <th>Nama</th>
-            <th>keluhan</th>
-            <th>Terapi</th>
-            <th>Keterangan</th>
+            <th width='30%'>No</th>
+            <th style='border:1px solid#000;'>Tanggal Kunjungan</th>
+            <th style='border:1px solid#000;'>Nama</th>
+            <th style='border:1px solid#000;'>keluhan</th>
+            <th style='border:1px solid#000;'>Terapi</th>
+            <th style='border:1px solid#000;'>Keterangan</th>
           </tr>
         </thead>
 		<tbody>
@@ -190,82 +190,10 @@ $data_kunjungan = $tableHead_kunjungan ."". $tableIsi_kunjungan ."". $tableFoot_
 // ISI PDF SAMPE SINI
 
 
-
 // ISI PDF
-
-$tableHead_bersalin = "
-	<h2>Data Bersalin</h2>
-      <table border='1'>
-        <thead>
-          <tr>
-            <th width='20px'>No</th>
-            <th>Tanggal Kunjungan</th>
-            <th>Nama</th>
-			<th>Diagnosa</th>
-			<th>Tanggal Lahir </th>
-            <th>Jenis Kelamin</th>
-            <th>Berat Badan</th>
-            <th>Panjang Badan</th>
-          </tr>
-        </thead>
-		<tbody>
-
-";
-
-
-$tableIsi_bersalin = "
-
-";
-
-
-$tahun = date("Y");
-$bulan = date("m");
-
-$sql = "select * from persalinan WHERE no_reg = ".$_GET['no_reg']." ";
-$query = mysqli_query($con, $sql);
-$nomer = 1;
-if ($query) {
-
-	while ($data = mysqli_fetch_array($query)) {
-	
-	$tableIsi_bersalin .= "
-	
-			<tr>
-				<td>". $nomer ."</td>
-				<td>". $data['tgl_kunjungan'] ."</td>
-				<td>". $data['nama'] ."</td>
-				<td>". $data['diagnosa'] ."</td>
-				<td>". $data['jam_lahir'] ."</td>
-				<td>". $data['jenis_kelamin'] ."</td>
-				<td>". $data['berat_badan'] ."</td>
-				<td>". $data['panjang_badan'] ."</td>
-			</tr>
-	";
-	$nomer++;
-	}
-
-}
-else{
-	$tableIsi_bersalin = "<tr><td colspan='7'>eror nich datanya ga muncul</td></tr>";
-}
-
-
-$tableFoot_bersalin = "
-	
-		
-
-		</tbody>
-		</table>
-";
-
-$data_bersalin = $tableHead_bersalin ."". $tableIsi_bersalin ."". $tableFoot_bersalin;
-
-// ISI PDF SAMPE SINI
-
-
-// ISI PDF
-
-$tableHead_imunisasi = "
+$tableHead_imunisasi = '';
+$tableHead_imunisasi .= "
+      <table border='1' cellspacing='0' cellpadding='3'> 
 	<h2>Data Imunisasi</h2>
       <table border='1'>
         <thead>
@@ -273,8 +201,8 @@ $tableHead_imunisasi = "
             <th width='20px'>No</th>
             <th>Tanggal Kunjungan</th>
             <th>Nama</th>
-			<th>Nama Bayi</th>
-			<th>Berat Badan </th>
+						<th>Nama Bayi</th>
+						<th>Berat Badan </th>
             <th>Lingkar Kepala</th>
             <th>Jenis Imunisasi</th>
             <th>Tanggal Lahir Bayi</th>
@@ -337,6 +265,7 @@ $data_imunisasi = $tableHead_imunisasi ."". $tableIsi_imunisasi ."". $tableFoot_
 
 
 
+
 // ISI PDF
 
 $tableHead_bersalin = "
@@ -347,8 +276,8 @@ $tableHead_bersalin = "
             <th width='20px'>No</th>
             <th>Tanggal Kunjungan</th>
             <th>Nama</th>
-			<th>Diagnosa</th>
-			<th>Tanggal Lahir </th>
+						<th>Taksiran Persalinan</th>
+						<th>Tanggal Lahir </th>
             <th>Jenis Kelamin</th>
             <th>Berat Badan</th>
             <th>Panjang Badan</th>
@@ -380,7 +309,7 @@ if ($query) {
 				<td>". $nomer ."</td>
 				<td>". $data['tgl_kunjungan'] ."</td>
 				<td>". $data['nama'] ."</td>
-				<td>". $data['diagnosa'] ."</td>
+				<td>". $data['taksiran_persalinan'] ."</td>
 				<td>". $data['jam_lahir'] ."</td>
 				<td>". $data['jenis_kelamin'] ."</td>
 				<td>". $data['berat_badan'] ."</td>
@@ -407,7 +336,6 @@ $tableFoot_bersalin = "
 $data_bersalin = $tableHead_bersalin ."". $tableIsi_bersalin ."". $tableFoot_bersalin;
 
 // ISI PDF SAMPE SINI
-
 
 // ISI PDF
 

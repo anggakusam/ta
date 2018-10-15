@@ -7,12 +7,6 @@
 
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.php">
-            <i class="fa fa-fw fa-home"></i>
-            <span class="nav-link-text">Halaman Depan</span>
-          </a>
-        </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
           <a class="nav-link" href="pendaftaran.php">
             <i class="fa fa-fw fa-address-card"></i>
@@ -76,10 +70,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="menulihatlaporan">
             <li>
-              <a href="#.php">Kunjungan Berobat</a>
-            </li>
-            <li>
-              <a href="keuangan.php">Keuangan</a>
+              <a href="keuangan.php">
+              <i class="fa fa-fw fa-print"></i>
+              Keuangan
+              </a>
             </li>
             <li>
               <a href="print/print-laporan.php" target="_blank">
@@ -113,15 +107,15 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Keluar</h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
           </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-body">Apakah anda yakin untuk keluar?</div>
           <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="aksi.php?aksi=keluar_admin">Logout</a>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+            <a class="btn btn-primary" href="aksi.php?aksi=keluar_admin">Keluar</a>
           </div>
         </div>
       </div>

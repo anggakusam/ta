@@ -35,6 +35,10 @@ if(isset($_SESSION['admin'])) {
         <input type="text" class="form-control" id="nama" name="nama" aria-describedby="emailHelp"  readonly>
       </div> 
       <div class="form-group">
+        <label for="nama_suami">Nama Suami</label>
+        <input type="text" class="form-control" id="nama_suami" name="nama_suami" aria-describedby="emailHelp"  readonly>
+      </div> 
+      <div class="form-group">
         <label for="tgl_lahir">Tanggal Lahir</label>
         <input type="text" class="form-control" id="tgl_lahir" name="tgl_lahir"  readonly required>
       </div> 
@@ -51,55 +55,16 @@ if(isset($_SESSION['admin'])) {
           <input type="text" class="form-control" id="diagnosa" name="diagnosa" aria-describedby="emailHelp" required>
       </div> 
       <div class="form-group">
-          <label for="obat">Obat</label>
-            <select class="form-control" name="obat1">
-            <option value="-">-</option>
-              <?php 
-                $query = "select nama_obat, harga_obat from obat order by nama_obat";
-                $sql1 = mysqli_query($con, $query);
-
-                while($data = mysqli_fetch_array($sql1)){
-                  echo "<option value='".$data['nama_obat']."-".$data['harga_obat']."'>".$data['nama_obat']."</option>";
-                }
-              ?>
-            </select>
-        </div>
-        <div class="form-group">
-            <select class="form-control" name="obat2">
-            <option value="-">-</option>
-              <?php 
-                $sql2 = mysqli_query($con, $query);
-
-                while($data = mysqli_fetch_array($sql2)){
-                  echo "<option value='".$data['nama_obat']."-".$data['harga_obat']."'>".$data['nama_obat']."</option>";
-                }
-              ?>
-            </select>
-        </div>
-        <div class="form-group">
-            <select class="form-control" name="obat3">
-            <option value="-">-</option>
-              <?php 
-                $sql3 = mysqli_query($con, $query);
-
-                while($data = mysqli_fetch_array($sql3)){
-                  echo "<option value='".$data['nama_obat']."-".$data['harga_obat']."'>".$data['nama_obat']."</option>";
-                }
-              ?>
-            </select>
-        </div>
-            <div class="form-group">
-          <label for="jam_lahir">Jam Lahir</label>
-          <input type="datetime-local" class="form-control" id="jam_lahir" name="jam_lahir" required>
-      </div> 
-      <div class="form-group">
           <label for="jenis_kelamin">Jenis Kelamin</label><br>
-
           <label for="laki">Laki-laki</label>
             <input type="radio" id="laki" name="jenis_kelamin" value="Laki - Laki" checked>
           &nbsp;&nbsp;&nbsp;
           <label for="perempuan">Perempuan</label>
             <input type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan"><br><br>
+      </div> 
+      <div class="form-group">
+          <label for="jam_lahir">Tanggal Lahir</label>
+            <input type="datetime-local" class="form-control"  id="jam_lahir" name="jam_lahir" required>
       </div> 
             <div class="form-group">
           <label for="berat_badan">Berat Badan</label>
@@ -191,6 +156,7 @@ if(isset($_SESSION['admin'])) {
                 var json = data,
                 obj = JSON.parse(json);
                 $("#nama").val(obj.nama);
+                $("#nama_suami").val(obj.nama_suami);
                 $("#tgl_lahir").val(obj.tgl_lahir);
                 $("#alamat").val(obj.alamat);
                 $("#no_hp").val(obj.no_hp);
