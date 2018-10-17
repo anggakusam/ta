@@ -19,7 +19,7 @@ if(isset($_SESSION['admin'])) {
  
   <div class="content-wrapper">
     <div class="container-fluid">
-    <a href="data-obat.php"><button>Lihat Data</button></a>
+    <a href="data-obat.php" class="btn btn-secondary">Lihat Data</a>
     <!-- ISI KONTEN -->
    
     <div class="form-group">
