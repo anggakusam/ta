@@ -64,19 +64,19 @@ if(isset($_SESSION['admin'])) {
       </div> 
       <div class="form-group">
           <label for="jam_lahir">Tanggal Lahir</label>
-            <input type="datetime-local" class="form-control"  id="jam_lahir" name="jam_lahir" required>
+            <input type="datetime-local" class="form-control"  id="jam_lahir" name="jam_lahir" >
       </div> 
             <div class="form-group">
           <label for="berat_badan">Berat Badan</label>
-          <input type="text" class="form-control" id="berat_badan" name="berat_badan" aria-describedby="emailHelp"  required>
+          <input type="text" class="form-control" id="berat_badan" name="berat_badan" aria-describedby="emailHelp"  >
       </div> 
             <div class="form-group">
           <label for="panjang_badan">Panjang Badan</label>
-          <input type="text" class="form-control" id="panjang_badan" name="panjang_badan" aria-describedby="emailHelp"  required>
+          <input type="text" class="form-control" id="panjang_badan" name="panjang_badan" aria-describedby="emailHelp"  >
       </div> 
               <div class="form-group">
           <label for="penolong">Penolong</label>
-          <input type="text" class="form-control" id="penolong" name="penolong" aria-describedby="emailHelp"  required>
+          <input type="text" class="form-control" id="penolong" name="penolong" aria-describedby="emailHelp"  >
       </div> 
       <div class="form-group">
           <label for="biaya_berobat">Biaya Berobat</label>

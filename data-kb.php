@@ -22,6 +22,7 @@ if(isset($_SESSION['admin'])) {
 
   <div class="content-wrapper">
     <div class="container-fluid">
+    <a href="kb.php" class="btn btn-secondary">Tambah Data</a>
       <h2>Data Keluarga Berencana</h2>
       <table id='tablePasien' class='display'>
         <thead>
@@ -35,6 +36,7 @@ if(isset($_SESSION['admin'])) {
             <th>Metode KB</th>
             <th>Jadwal Kunjungan Ulang</th>
             <th>Keterangan</th>
+            <th>aksi</th>
           </tr>
         </thead>
         <tbody>
@@ -60,6 +62,13 @@ if(isset($_SESSION['admin'])) {
                   <td>". $data['metode_kb'] ."</td>
                   <td>". $data['jadwal_kunjungan_ulang'] ."</td>
                   <td>". $data['keterangan'] ."</td>
+                  <td> 
+                  <Center>
+                      <a href='edit-data-kb.php?id_kb=".$data['id_kb']."'>
+                            <i class='fa fa-pencil'></i>
+                      </a>
+                  </center>
+                </td>
               </tr>
         ";
         $nomer++;

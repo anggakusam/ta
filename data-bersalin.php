@@ -22,6 +22,7 @@ if(isset($_SESSION['admin'])) {
   <!-- ISI KONTEN -->
   <div class="content-wrapper">
     <div class="container-fluid">
+    <a href="bersalin.php" class="btn btn-secondary">Tambah Data</a>
         <h2>Data Bersalin</h2>
       <table id='tablePasien' class='display'>
         <thead>
@@ -69,9 +70,9 @@ if(isset($_SESSION['admin'])) {
                   <td>". $data['penolong'] ."</td>
                   <td> 
                     <Center>
-                      <a href='#'>
-                        <i class='fa fa-address-card'></i>
-                      </a>
+                    <a href='edit-data-bersalin.php?id_persalinan=".$data['id_persalinan']."'>
+                    <i class='fa fa-pencil'></i>
+                     </a>
                       </center>
                   </td>
               </tr>

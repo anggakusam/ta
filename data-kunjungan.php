@@ -21,6 +21,7 @@ if(isset($_SESSION['admin'])) {
 
   <div class="content-wrapper">
     <div class="container-fluid">
+    <a href="kunjungan-umum.php" class="btn btn-secondary">Tambah Data</a>
       <h2>Data Kunjungan Umum</h2>
       <table id='tablePasien' class='display'>
         <thead>

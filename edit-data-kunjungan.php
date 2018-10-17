@@ -18,7 +18,7 @@
     
     <!-- ISI KONTEN -->
     <div class="form-group">
-        <h2>Pendaftaran</h2>  
+        <h2>Edit Data Kunjungan Umum</h2>  
     </div> 
     <div class="container-fluid">
       <form method="POST" action="aksi.php?aksi=edit-kunjungan">
@@ -29,6 +29,7 @@
       $data = mysqli_fetch_array($query);
       echo"
       <div class='form-group'>
+
     <label for='no_reg'>No Reg</label>
     <input type='hidden' name='id_kunjungan' value='".$data['id_kunjungan']."' required>
       <input type='text' class='form-control' id='no_reg' name='no_reg' aria-describedby='emailHelp' placeholder='Masukan No reg' value='".$data['no_reg']."' readonly>
@@ -41,7 +42,6 @@
         <label for='keluhan'>Keluhan</label>
         <input type='text' class='form-control' id='keluhan' name='keluhan' aria-describedby='emailHelp' value='".$data['keluhan']."' required>
     </div> 
-    
 
 
   

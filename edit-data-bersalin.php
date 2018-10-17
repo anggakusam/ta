@@ -18,34 +18,63 @@
     
     <!-- ISI KONTEN -->
     <div class="form-group">
-        <h2>Pendaftaran</h2>  
+        <h2>Edit Data Bersalin</h2>  
     </div> 
     <div class="container-fluid">
-      <form method="POST" action="aksi.php?aksi=edit-pasien">
+      <form method="POST" action="aksi.php?aksi=edit-persalinan">
       <?php
-      $noreg = $_GET['no_reg'];
-      $sql = "select * from pendaftaran where no_reg = ".$noreg." ";
+      $idpersalinan = $_GET['id_persalinan'];
+      $sql = "SELECT * from persalinan where id_persalinan = ".$idpersalinan." " ;
       $query = mysqli_query($con, $sql);
       $data = mysqli_fetch_array($query);
       echo"
       <div class='form-group'>
-        <label for='nama'>Nama</label>
-        <input type='hidden' name='no_reg' value='".$data['no_reg']."' required>
-        <input type='text' class='form-control' id='nama' name='nama' aria-describedby='emailHelp' placeholder='Masukan Nama' value='".$data['nama']."' required>
+            <label for='no_reg'>No Reg</label>
+            <input type='hidden' name='id_persalinan' value='".$data['id_persalinan']."' required>
+            <input type='text' class='form-control' id='no_reg' name='no_reg' aria-describedby='emailHelp' placeholder='Masukan No reg' value='".$data['no_reg']."' readonly>
       </div> 
       <div class='form-group'>
-        <label for='tgl_lahir'>Tanggal Lahir</label>
-        <input type='date' class='form-control' id='tgl_lahir' name='tgl_lahir' value='".$data['tgl_lahir']."'  required>
+            <label for='nama'>Nama</label>
+            <input type='text' class='form-control' id='nama' name='nama' aria-describedby='emailHelp' value='".$data['nama']."' readonly>
       </div> 
       <div class='form-group'>
-        <label for='alamat'>Alamat</label>
-        <textarea class='form-control' id='alamat' name='alamat' rows='3' required>".$data['alamat']."</textarea>
-      </div>
-      <div class='form-group'>
-        <label for='no_hp'>No HP</label>
-        <input type='text' class='form-control' id='no_hp' name='no_hp' aria-describedby='emailHelp' placeholder='Masukan No HP' value='".$data['no_hp']."'  required>
+            <label for='nama_suami'>Nama Suami</label>
+            <input type='text' class='form-control' id='nama_suami' name='nama_suami' aria-describedby='emailHelp' value='".$data['nama_suami']."' readonly>
       </div> 
-      ";
+      
+      <div class='form-group'>
+              <label for='taksiran_persalinan'>Taksiran Persalinan</label>
+                <input type='datetime-local' class='form-control'  id='taksiran_persalinan' name='taksiran_persalinan' required>
+      </div> 
+     <div class='form-group'>
+              <label for='diagnosa'>Diagnosa</label>
+              <input type='text' class='form-control' id='diagnosa' name='diagnosa' aria-describedby='emailHelp' value='".$data['diagnosa']."' required>
+      </div> 
+      <div class='form-group'>
+              <label for='jenis_kelamin'>Jenis Kelamin</label><br>
+              <label for='laki'>Laki-laki</label>
+                <input type='radio' id='laki' name='jenis_kelamin' value='Laki - Laki' checked>
+              &nbsp;&nbsp;&nbsp;
+              <label for='perempuan'>Perempuan</label>
+                <input type='radio' id='perempuan' name='jenis_kelamin' value='Perempuan'><br><br>
+      </div> 
+      <div class='form-group'>
+              <label for='jam_lahir'>Tanggal Lahir</label>
+                <input type='datetime-local' class='form-control'  id='jam_lahir' name='jam_lahir' required>
+      </div> 
+                <div class='form-group'>
+              <label for='berat_badan'>Berat Badan</label>
+              <input type='text' class='form-control' id='berat_badan' name='berat_badan' aria-describedby='emailHelp' value='".$data['berat_badan']."' required>
+      </div> 
+                <div class='form-group'>
+              <label for='panjang_badan'>Panjang Badan</label>
+              <input type='text' class='form-control' id='panjang_badan' name='panjang_badan' aria-describedby='emailHelp' value='".$data['panjang_badan']."'  required>
+      </div> 
+      <div class='form-group'>
+              <label for='penolong'>Penolong</label>
+              <input type='text' class='form-control' id='penolong' name='penolong' aria-describedby='emailHelp' value='".$data['penolong']."'  required>
+      </div>  
+        ";
 
       ?>
         
@@ -100,7 +129,7 @@
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
                   <?php
                   echo"
-                  <a href='aksi.php?aksi=hapus-data-pasien&&no_reg=".$data['no_reg']."'><button type='button' class='btn btn-danger'>Ya</button></a>
+                  <a href='aksi.php?aksi=hapus-data-bersalin&&id_persalinan=".$data['id_persalinan']."'><button type='button' class='btn btn-danger'>Ya</button></a>
                   ";
                   ?>
                 </div>

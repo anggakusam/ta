@@ -451,6 +451,151 @@ case"hapus-data-kunjungan":
 
 break;
 
+
+case"edit-persalinan":
+
+  $sql = "update persalinan set 
+    no_reg = '".$_POST['no_reg']."',
+    nama = '".$_POST['nama']."',
+    nama_suami = '".$_POST['nama_suami']."',
+    taksiran_persalinan = '".$_POST['taksiran_persalinan']."',
+    diagnosa = '".$_POST['diagnosa']."',
+    jenis_kelamin = '".$_POST['jenis_kelamin']."',
+    jam_lahir = '".$_POST['jam_lahir']."',
+    berat_badan = '".$_POST['berat_badan']."',
+    panjang_badan = '".$_POST['panjang_badan']."',
+    penolong = '".$_POST['penolong']."'
+    
+    where id_persalinan = '".$_POST['id_persalinan']."'";
+
+
+mysqli_query($con, $sql) 
+or die(mysqli_error($con));
+
+header("location:data-bersalin.php");
+
+break;
+
+
+case"hapus-data-bersalin":
+
+  $sql = "DELETE from persalinan where id_persalinan = '".$_GET['id_persalinan']."'";
+
+  mysqli_query($con, $sql) 
+  or die(mysqli_error($con));
+
+  header("location:data-bersalin.php");
+
+break;
+
+
+case"edit-imunisasi":
+
+  $sql = "update imunisasi set 
+    no_reg = '".$_POST['no_reg']."',
+    nama = '".$_POST['nama']."',
+    nama_bayi = '".$_POST['nama_bayi']."',
+    berat_badan_bayi = '".$_POST['berat_badan_bayi']."',
+    lingkar_kepala_bayi = '".$_POST['lingkar_kepala_bayi']."',
+    suhu = '".$_POST['suhu']."',
+    jenis_imunisasi = '".$_POST['jenis_imunisasi']."',
+    tgl_lahir_bayi = '".$_POST['tgl_lahir_bayi']."',
+    jadwal_kunjungan_ulang = '".$_POST['jadwal_kunjungan_ulang']."',
+    keterangan = '".$_POST['keterangan']."'
+    
+    where id_imunisasi = '".$_POST['id_imunisasi']."'";
+
+
+mysqli_query($con, $sql) 
+or die(mysqli_error($con));
+
+header("location:data-imunisasi.php");
+
+break;
+
+
+case"hapus-data-imunisasi":
+
+  $sql = "DELETE from imunisasi where id_imunisasi = '".$_GET['id_imunisasi']."'";
+
+  mysqli_query($con, $sql) 
+  or die(mysqli_error($con));
+
+  header("location:data-imunisasi.php");
+
+break;
+
+
+case"edit-kb":
+
+  $sql = "update kb set 
+    no_reg = '".$_POST['no_reg']."',
+    nama = '".$_POST['nama']."',
+    berat_badan = '".$_POST['berat_badan']."',
+    tekanan_darah = '".$_POST['tekanan_darah']."',
+    metode_kb = '".$_POST['metode_kb']."',
+    jadwal_kunjungan_ulang = '".$_POST['jadwal_kunjungan_ulang']."',
+    keterangan = '".$_POST['keterangan']."'
+    
+    where id_kb = '".$_POST['id_kb']."'";
+
+
+mysqli_query($con, $sql) 
+or die(mysqli_error($con));
+
+header("location:data-kb.php");
+
+break;
+
+
+case"hapus-data-kb":
+
+  $sql = "DELETE from kb where id_kb = '".$_GET['id_kb']."'";
+
+  mysqli_query($con, $sql) 
+  or die(mysqli_error($con));
+
+  header("location:data-kb.php");
+
+break;
+
+
+
+case"edit-antenatal":
+
+  $sql = "update antenatal_care set 
+    no_reg = '".$_POST['no_reg']."',
+    nama = '".$_POST['nama']."',
+    diagnosa = '".$_POST['diagnosa']."',
+    berat_badan = '".$_POST['berat_badan']."',
+    tekanan_darah = '".$_POST['tekanan_darah']."',
+    haid_terakhir = '".$_POST['haid_terakhir']."',
+    taksiran_persalinan = '".$_POST['taksiran_persalinan']."',
+    keterangan = '".$_POST['keterangan']."'
+
+    where id_antenatal = '".$_POST['id_antenatal']."'";
+
+
+mysqli_query($con, $sql) 
+or die(mysqli_error($con));
+
+header("location:data-antenatal.php");
+
+break;
+
+
+case"hapus-data-antenatal":
+
+  $sql = "DELETE from antenatal where id_antenatal = '".$_GET['id_antenatal']."'";
+
+  mysqli_query($con, $sql) 
+  or die(mysqli_error($con));
+
+  header("location:data-antenatal.php");
+
+break;
+
+
 }
 
 

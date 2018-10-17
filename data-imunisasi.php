@@ -22,6 +22,7 @@ if(isset($_SESSION['admin'])) {
 
   <div class="content-wrapper">
     <div class="container-fluid">
+    <a href="imunisasi.php" class="btn btn-secondary">Tambah Data</a>
       <h2>Data Imunisasi</h2>
       <table id='tablePasien' class='display'>
         <thead>
@@ -38,6 +39,7 @@ if(isset($_SESSION['admin'])) {
             <th>Tanggal Lahir Bayi</th>
             <th>Jadwal Kunjungan Ulang</th>
             <th>Keterangan</th>
+            <th>Aksi</th>
           
           </tr>
         </thead>
@@ -67,6 +69,13 @@ if(isset($_SESSION['admin'])) {
                   <td>". $data['tgl_lahir_bayi'] ."</td>
                   <td>". $data['jadwal_kunjungan_ulang'] ."</td>
                   <td>". $data['keterangan'] ."</td>
+                  <td> 
+                  <Center>
+                      <a href='edit-data-imunisasi.php?id_imunisasi=".$data['id_imunisasi']."'>
+                            <i class='fa fa-pencil'></i>
+                      </a>
+                  </center>
+                </td>
               </tr>
         ";
         $nomer++;

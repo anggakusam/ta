@@ -18,10 +18,12 @@ if(isset($_SESSION['admin'])) {
   
   <!-- Navigation-->
   <?php include "komponen/menu.php"; ?>
-
+ 
   <div class="content-wrapper">
+  
     <div class="container-fluid">
-      <h2>Data Antenatal</h2>
+    <a href="antenatal.php" class="btn btn-secondary">Tambah Data</a>
+      <h2>Data Antenatal</h2> 
       <table id='tablePasien' class='display'>
         <thead>
           <tr>
@@ -37,6 +39,7 @@ if(isset($_SESSION['admin'])) {
             <th>Tindakan</th>
             <th>Obat</th>
             <th>Keterangan</th>
+            <th>Aksi</th>
           </tr>
         </thead>
         <tbody>
@@ -65,6 +68,13 @@ if(isset($_SESSION['admin'])) {
                   <td>". $data['tindakan'] ."</td>
                   <td>". $data['obat'] ."</td>
                   <td>". $data['keterangan'] ."</td>
+                  <td> 
+                  <Center>
+                  <a href='edit-data-antenatal.php?id_antenatal=".$data['id_antenatal']."'>
+                  <i class='fa fa-pencil'></i>
+                   </a>
+                    </center>
+                </td>
               </tr>
         ";
         $nomer++;

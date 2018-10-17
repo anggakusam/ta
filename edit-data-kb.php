@@ -21,30 +21,52 @@
         <h2>Pendaftaran</h2>  
     </div> 
     <div class="container-fluid">
-      <form method="POST" action="aksi.php?aksi=edit-pasien">
+      <form method="POST" action="aksi.php?aksi=edit-kb">
       <?php
-      $noreg = $_GET['no_reg'];
-      $sql = "select * from pendaftaran where no_reg = ".$noreg." ";
+      $idkb = $_GET['id_kb'];
+      $sql = "select * from kb where id_kb = ".$idkb." ";
       $query = mysqli_query($con, $sql);
       $data = mysqli_fetch_array($query);
       echo"
       <div class='form-group'>
-        <label for='nama'>Nama</label>
-        <input type='hidden' name='no_reg' value='".$data['no_reg']."' required>
-        <input type='text' class='form-control' id='nama' name='nama' aria-describedby='emailHelp' placeholder='Masukan Nama' value='".$data['nama']."' required>
+              <label for='no_reg'>No Reg</label>
+              <input type='hidden' name='id_kb' value='".$data['id_kb']."' required>
+            <input type='text' class='form-control' id='no_reg' name='no_reg' aria-describedby='emailHelp' placeholder='Masukan No reg' value='".$data['no_reg']."' readonly>
       </div> 
       <div class='form-group'>
-        <label for='tgl_lahir'>Tanggal Lahir</label>
-        <input type='date' class='form-control' id='tgl_lahir' name='tgl_lahir' value='".$data['tgl_lahir']."'  required>
+              <label for='nama'>Nama</label>
+              <input type='text' class='form-control' id='nama' name='nama' aria-describedby='emailHelp'   value='".$data['nama']."' readonly>
       </div> 
       <div class='form-group'>
-        <label for='alamat'>Alamat</label>
-        <textarea class='form-control' id='alamat' name='alamat' rows='3' required>".$data['alamat']."</textarea>
+                <label for='berat_badan'>Berat Badan</label>
+                  <input type='text' class='form-control'  id='berat_badan' name='berat_badan' value='".$data['berat_badan']."' required>
+      </div> 
+      <div class='form-group'>
+                <label for='tekanan_darah'>Tekanan Darah</label>
+                <input type='text' class='form-control' id='tekanan_darah' name='tekanan_darah' value='".$data['tekanan_darah']."' required>
+      </div> 
+      <div class='form-group'>
+                <label for='metode_kb'>Metode KB</label>
+                <select class='form-control' name='metode_kb'>
+                      <option value='value='".$data['metode_kb']."'>".$data['metode_kb']." </option>
+                      <option value='Cyclo'>Cyclo ( suntik 1 bulan )</option>
+                      <option value='Depo'>Depo ( Suntik 3 bulan )</option>
+                      <option value='Pil Laktasi'>Pil Laktasi</option>
+                      <option value='Pil KB: Trinordiol'>Pil KB: Trinordiol</option>
+                      <option value='Pil KB'>PIL KB</option>
+                      <option value='Andalan'>Andalan</option>
+                      <option value='IUD COPPERTY'>IUD COPPERTY</option>
+                  </select>
       </div>
-      <div class='form-group'>
-        <label for='no_hp'>No HP</label>
-        <input type='text' class='form-control' id='no_hp' name='no_hp' aria-describedby='emailHelp' placeholder='Masukan No HP' value='".$data['no_hp']."'  required>
+                  <div class='form-group'>
+                <label for='jadwal_kunjungan_ulang'>Jadwal Kunjungan Ulang</label>
+                  <input type='date' class='form-control'  id='jadwal_kunjungan_ulang' name='jadwal_kunjungan_ulang' value='".$data['jadwal_kunjungan_ulang']."' required>
       </div> 
+      <div class='form-group'>
+                <label for='keterangan'>Keterangan</label>
+                  <input type='text' class='form-control'  id='keterangan' name='keterangan' value='".$data['keterangan']."' required>
+       </div> 
+
       ";
 
       ?>
@@ -100,7 +122,7 @@
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
                   <?php
                   echo"
-                  <a href='aksi.php?aksi=hapus-data-pasien&&no_reg=".$data['no_reg']."'><button type='button' class='btn btn-danger'>Ya</button></a>
+                  <a href='aksi.php?aksi=hapus-data-kb&&id_kb=".$data['id_kb']."'><button type='button' class='btn btn-danger'>Ya</button></a>
                   ";
                   ?>
                 </div>

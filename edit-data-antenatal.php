@@ -21,30 +21,64 @@
         <h2>Pendaftaran</h2>  
     </div> 
     <div class="container-fluid">
-      <form method="POST" action="aksi.php?aksi=edit-pasien">
+      <form method="POST" action="aksi.php?aksi=edit-antenatal">
       <?php
-      $noreg = $_GET['no_reg'];
-      $sql = "select * from pendaftaran where no_reg = ".$noreg." ";
+      $idantenatal = $_GET['id_antenatal'];
+      $sql = "select * from antenatal_care where id_antenatal = ".$idantenatal." ";
       $query = mysqli_query($con, $sql);
       $data = mysqli_fetch_array($query);
       echo"
       <div class='form-group'>
-        <label for='nama'>Nama</label>
-        <input type='hidden' name='no_reg' value='".$data['no_reg']."' required>
-        <input type='text' class='form-control' id='nama' name='nama' aria-describedby='emailHelp' placeholder='Masukan Nama' value='".$data['nama']."' required>
+            <label for='no_reg'>No Reg</label>
+            <input type='hidden' name='id_antenatal' value='".$data['id_antenatal']."' required>
+            <input type='text' class='form-control' id='no_reg' name='no_reg' aria-describedby='emailHelp' placeholder='Masukan No reg' value='".$data['no_reg']."' readonly>
       </div> 
       <div class='form-group'>
-        <label for='tgl_lahir'>Tanggal Lahir</label>
-        <input type='date' class='form-control' id='tgl_lahir' name='tgl_lahir' value='".$data['tgl_lahir']."'  required>
+            <label for='nama'>Nama</label>
+            <input type='text' class='form-control' id='nama' name='nama' aria-describedby='emailHelp' value='".$data['nama']."' readonly>
+      </div> 
+  
+      <div class='form-group'>
+              <label for='diagnosa'>Diagnosa</label>
+                <input type='text' class='form-control'  id='diagnosa' name='diagnosa' value='".$data['diagnosa']."' required>
+       </div> 
+      <div class='form-group'>
+                <label for='berat_badan'>Berat Badan</label>
+                <input type='text' class='form-control'  id='berat_badan' name='berat_badan' value='".$data['berat_badan']."' required>
       </div> 
       <div class='form-group'>
-        <label for='alamat'>Alamat</label>
-        <textarea class='form-control' id='alamat' name='alamat' rows='3' required>".$data['alamat']."</textarea>
+              <label for='tekanan_darah'>Tekanan Darah</label>
+              <input type='text' class='form-control' id='tekanan_darah' name='tekanan_darah' value='".$data['tekanan_darah']."' required>
+      </div> 
+      <div class='form-group'>
+              <label for='haid_terakhir'>Haid Terakhir</label>
+              <input type='date' class='form-control' id='haid_terakhir' name='haid_terakhir' value='".$data['haid_terakhir']."' required>
       </div>
       <div class='form-group'>
-        <label for='no_hp'>No HP</label>
-        <input type='text' class='form-control' id='no_hp' name='no_hp' aria-describedby='emailHelp' placeholder='Masukan No HP' value='".$data['no_hp']."'  required>
+              <label for='taksiran_persalinan'>Taksiran Persalinan</label>
+                <input type='date' class='form-control'  id='taksiran_persalinan' name='taksiran_persalinan'  value='".$data['taksiran_persalinan']."' required>
       </div> 
+      <div class='form-group'>
+              <label for='tindakan'>Tindakan</label>
+              <select class='form-control' name='tindakan'>
+
+                    <option value='value='".$data['tindakan']."'>".$data['tindakan']." </option>
+                    <option value='Trimester 1: Asam Folat 30'>Trimester 1: Asam Folat 30 </option>
+                    <option value='Trimester 1: Asam Folat 30 + obat mual'>Trimester 1: Asam Folat 30 + obat mual </option>
+                    <option value='Trimester 1: Asam Folat 30 + obat mual + Vit C'>Trimester 1: Asam Folat 30 + obat mual + Vit C </option>
+                    <option value='Trimester 2: Hufabion 20 + Calcifar 10'>Trimester 2: Hufabion 20 + Calcifar 10 </option>
+                    <option value='Trimester 2: Etabion 30 + Erkade 10'>Trimester 2: Etabion 30 + Erkade 10 </option>
+                    <option value='Trimester 2: Gestiamin Z + Calcifar 20'>Trimester 2: Gestiamin Z + Calcifar 20 </option>
+                    <option value='Trimester 2: Fermia 30 + Licokalk 10'>Trimester 2: Fermia 30 + Licokalk 10 </option>
+                    <option value='Trimester 3: Gestiamin Z 10'>Trimester 3: Gestiamin Z 10 </option>
+                    <option value='Trimester 3: Neurodex 10'>Trimester 3: Neurodex 10 </option>
+                    <option value='Trimester 3: Alinammin F 5'>Trimester 3: Alinammin F 5 </option>
+                </select>
+      </div> 
+        <div class='form-group'>
+              <label for='keterangan'>Keterangan</label>
+                <input type='text' class='form-control'  id='keterangan' name='keterangan' value='".$data['keterangan']."' required>
+        </div>  
       ";
 
       ?>

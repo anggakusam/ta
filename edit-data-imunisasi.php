@@ -18,33 +18,63 @@
     
     <!-- ISI KONTEN -->
     <div class="form-group">
-        <h2>Pendaftaran</h2>  
+        <h2>Edit Data Imunisasi</h2>  
     </div> 
     <div class="container-fluid">
-      <form method="POST" action="aksi.php?aksi=edit-pasien">
+      <form method="POST" action="aksi.php?aksi=edit-imunisasi">
       <?php
-      $noreg = $_GET['no_reg'];
-      $sql = "select * from pendaftaran where no_reg = ".$noreg." ";
+      $idimunisasi = $_GET['id_imunisasi'];
+      $sql = "select * from imunisasi where id_imunisasi = ".$idimunisasi." ";
       $query = mysqli_query($con, $sql);
       $data = mysqli_fetch_array($query);
       echo"
       <div class='form-group'>
-        <label for='nama'>Nama</label>
-        <input type='hidden' name='no_reg' value='".$data['no_reg']."' required>
-        <input type='text' class='form-control' id='nama' name='nama' aria-describedby='emailHelp' placeholder='Masukan Nama' value='".$data['nama']."' required>
+            <label for='no_reg'>No Reg</label>
+            <input type='hidden' name='id_imunisasi' value='".$data['id_imunisasi']."' required>
+            <input type='text' class='form-control' id='no_reg' name='no_reg' aria-describedby='emailHelp' placeholder='Masukan No reg' value='".$data['no_reg']."' readonly>
       </div> 
       <div class='form-group'>
-        <label for='tgl_lahir'>Tanggal Lahir</label>
-        <input type='date' class='form-control' id='tgl_lahir' name='tgl_lahir' value='".$data['tgl_lahir']."'  required>
+            <label for='nama'>Nama</label>
+            <input type='text' class='form-control' id='nama' name='nama' aria-describedby='emailHelp' value='".$data['nama']."' readonly>
+      <div class='form-group'>
+              <label for='nama_bayi'>Nama Bayi</label>
+                <input type='text' class='form-control'  id='nama_bayi' name='nama_bayi' value='".$data['nama_bayi']."' required>
+       </div> 
+      <div class='form-group'>
+              <label for='berat_badan_bayi'>Berat Badan Bayi</label>
+              <input type='text' class='form-control' id='berat_badan_bayi' name='berat_badan_bayi' value='".$data['berat_badan_bayi']."' required>
       </div> 
       <div class='form-group'>
-        <label for='alamat'>Alamat</label>
-        <textarea class='form-control' id='alamat' name='alamat' rows='3' required>".$data['alamat']."</textarea>
-      </div>
-      <div class='form-group'>
-        <label for='no_hp'>No HP</label>
-        <input type='text' class='form-control' id='no_hp' name='no_hp' aria-describedby='emailHelp' placeholder='Masukan No HP' value='".$data['no_hp']."'  required>
+              <label for='lingkar_kepala_bayi'>Lingkar Kepala Bayi</label>
+              <input type='text' class='form-control' id='lingkar_kepala_bayi' name='lingkar_kepala_bayi'  value='".$data['lingkar_kepala_bayi']."' required>
       </div> 
+      <div class='form-group'>
+              <label for='suhu'>Suhu Badan</label>
+              <input type='text' class='form-control' id='suhu' name='suhu' aria-describedby='emailHelp'   value='".$data['suhu']."' required>
+      </div> 
+      <div class='form-group'>
+            <label for='jenis_imunisasi'>Jenis Imunisasi</label>
+              <select class='form-control' name='jenis_imunisasi'>
+                    <option value='BCG + Polio'>BCG + Polio</option>
+                    <option value='HB-O'>HB-O</option>
+                    <option value='Pentabio + Polio'>Pentabio + Polio</option>
+                    <option value='Pentabio + Polio + Paracetamol'>Pentabio + Polio + Paracetamol</option>
+                    <option value='Campak Rubela'>Campak Rubela</option>
+                    <option value='Tetanus Difteri'>Tetanus Difteri</option>
+                </select>
+        </div> 
+        <div class='form-group'>
+              <label for='tgl_lahir_bayi'>Tanggal Lahir Bayi</label>
+              <input type='date' class='form-control' id='tgl_lahir_bayi' name='tgl_lahir_bayi' aria-describedby='emailHelp' value='".$data['tgl_lahir_bayi']."' required>
+        </div> 
+        <div class='form-group'>
+              <label for='jadwal_kunjungan_ulang'>Jadwal Kunjungan Ulang</label>
+                <input type='date' class='form-control'  id='jadwal_kunjungan_ulang' name='jadwal_kunjungan_ulang' value='".$data['jadwal_kunjungan_ulang']."' required>
+        </div> 
+        <div class='form-group'>
+              <label for='keterangan'>Keterangan</label>
+                <input type='text' class='form-control'  id='keterangan' name='keterangan' value='".$data['keterangan']."' required>
+        </div> 
       ";
 
       ?>
@@ -100,7 +130,7 @@
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
                   <?php
                   echo"
-                  <a href='aksi.php?aksi=hapus-data-pasien&&no_reg=".$data['no_reg']."'><button type='button' class='btn btn-danger'>Ya</button></a>
+                  <a href='aksi.php?aksi=hapus-data-imunisasi&&no_reg=".$data['id_imunisasi']."'><button type='button' class='btn btn-danger'>Ya</button></a>
                   ";
                   ?>
                 </div>
