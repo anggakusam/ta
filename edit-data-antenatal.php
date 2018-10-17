@@ -134,7 +134,7 @@
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
                   <?php
                   echo"
-                  <a href='aksi.php?aksi=hapus-data-pasien&&no_reg=".$data['no_reg']."'><button type='button' class='btn btn-danger'>Ya</button></a>
+                  <a href='aksi.php?aksi=hapus-data-antenatal&&id_antenatal=".$data['id_antenatal']."'><button type='button' class='btn btn-danger'>Ya</button></a>
                   ";
                   ?>
                 </div>

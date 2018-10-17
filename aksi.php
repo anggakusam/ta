@@ -586,7 +586,7 @@ break;
 
 case"hapus-data-antenatal":
 
-  $sql = "DELETE from antenatal where id_antenatal = '".$_GET['id_antenatal']."'";
+  $sql = "DELETE from antenatal_care where id_antenatal = '".$_GET['id_antenatal']."'";
 
   mysqli_query($con, $sql) 
   or die(mysqli_error($con));
