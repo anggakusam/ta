@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 15, 2018 at 04:26 AM
+-- Generation Time: Oct 17, 2018 at 06:19 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -59,14 +59,14 @@ CREATE TABLE IF NOT EXISTS `antenatal_care` (
   `obat` varchar(50) DEFAULT NULL,
   `keterangan` text,
   PRIMARY KEY (`id_antenatal`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `antenatal_care`
 --
 
 INSERT INTO `antenatal_care` (`id_antenatal`, `tgl_kunjungan`, `no_reg`, `nama`, `diagnosa`, `berat_badan`, `tekanan_darah`, `haid_terakhir`, `taksiran_persalinan`, `tindakan`, `obat`, `keterangan`) VALUES
-(1, '2018-10-15', 2, 'Mimin Mintarsih', 'Amenorrhea', 70, '110/90', '2018-05-18', '2018-10-24', 'Trimester 2: Gestiamin Z + Calcifar 20', 'Farsidol Forte,Paracetamol Syrup', 'anti biotiknya habiskan');
+(1, '2018-10-15', 2, 'Mimin Mintarsih', 'Amenorrhea', 65, '110/90', '2018-05-18', '2018-10-24', 'Trimester 2: Gestiamin Z + Calcifar 20', 'Farsidol Forte,Paracetamol Syrup', 'anti biotiknya habiskan');
 
 -- --------------------------------------------------------
 
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `imunisasi` (
 --
 
 INSERT INTO `imunisasi` (`id_imunisasi`, `tgl_kunjungan`, `no_reg`, `nama`, `nama_bayi`, `berat_badan_bayi`, `lingkar_kepala_bayi`, `suhu`, `jenis_imunisasi`, `tgl_lahir_bayi`, `jadwal_kunjungan_ulang`, `keterangan`) VALUES
-(1, '2018-10-15', 1, 'Alven', 'Gigi Hadid', 8.70, 18.00, 23.30, 'Tetanus Difteri', '2015-04-05', '2017-04-05', 'jangan makan pedas');
+(1, '2018-10-15', 1, 'Alven', 'Jeje', 8.70, 18.00, 23.30, 'BCG + Polio', '2015-04-05', '2017-04-05', 'jangan makan pedas');
 
 -- --------------------------------------------------------
 
@@ -114,14 +114,14 @@ CREATE TABLE IF NOT EXISTS `kb` (
   `jadwal_kunjungan_ulang` date NOT NULL,
   `keterangan` text NOT NULL,
   PRIMARY KEY (`id_kb`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `kb`
 --
 
 INSERT INTO `kb` (`id_kb`, `tgl_kunjungan`, `no_reg`, `nama`, `berat_badan`, `tekanan_darah`, `metode_kb`, `jadwal_kunjungan_ulang`, `keterangan`) VALUES
-(1, '2018-10-15', 2, 'Mimin Mintarsih', 70, '110/90', 'IUD COPPERTY', '2018-05-10', 'sukses kb');
+(2, '2018-10-17', 5, 'Salshabila', 70, '110/90', 'IUD COPPERTY', '2018-05-20', 'sukses kb');
 
 -- --------------------------------------------------------
 
@@ -139,13 +139,6 @@ CREATE TABLE IF NOT EXISTS `kunjungan_umum` (
   `keterangan` text NOT NULL,
   PRIMARY KEY (`id_kunjungan`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `kunjungan_umum`
---
-
-INSERT INTO `kunjungan_umum` (`id_kunjungan`, `tgl_kunjungan`, `no_reg`, `nama`, `keluhan`, `terapi`, `keterangan`) VALUES
-(2, '2018-10-15', 1, 'Alven', 'Sakit Setelah Kehamilan', 'Farsidol Forte,Paracetamol Syrup,', 'Obatnya habiskan');
 
 -- --------------------------------------------------------
 
@@ -188,7 +181,7 @@ CREATE TABLE IF NOT EXISTS `pembayaran` (
   `biaya_obat` int(7) DEFAULT NULL,
   `total_harga` int(8) DEFAULT NULL,
   PRIMARY KEY (`id_pembayaran`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `pembayaran`
@@ -201,7 +194,11 @@ INSERT INTO `pembayaran` (`id_pembayaran`, `tgl_kunjungan`, `no_reg`, `nama`, `j
 (4, '2018-10-15', 1, 'Alven', 'Imunisasi', 'Tetanus Difteri', 60000, 0, 60000),
 (5, '2018-10-15', 2, 'Mimin Mintarsih', 'KB', 'IUD COPPERTY', 250000, 0, 250000),
 (6, '2018-10-15', 2, 'Mimin Mintarsih', 'Antenatal Care', 'Trimester 2: Gestiamin Z + Calcifar 20', 60000, 22500, 82500),
-(7, '2018-10-15', 1, 'Alven', 'Melahirkan', '-', 650000, 0, 650000);
+(7, '2018-10-15', 1, 'Alven', 'Melahirkan', '-', 650000, 0, 650000),
+(8, '2018-10-17', 11, 'Alfia Rizky', 'Melahirkan', '-', 850000, 0, 850000),
+(9, '2018-10-17', 8, 'Cucu ', 'Melahirkan', '-', 850000, 0, 850000),
+(10, '2018-10-17', 5, 'Salshabila', 'KB', 'IUD COPPERTY', 250000, 0, 250000),
+(11, '2018-10-17', 7, 'Tuti', 'Antenatal Care', 'Trimester 1: Asam Folat 30 + obat mual + Vit C', 55000, 30000, 85000);
 
 -- --------------------------------------------------------
 
@@ -218,15 +215,23 @@ CREATE TABLE IF NOT EXISTS `pendaftaran` (
   `no_hp` varchar(13) NOT NULL,
   `tgl_daftar` date NOT NULL,
   PRIMARY KEY (`no_reg`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `pendaftaran`
 --
 
 INSERT INTO `pendaftaran` (`no_reg`, `nama`, `nama_suami`, `tgl_lahir`, `alamat`, `no_hp`, `tgl_daftar`) VALUES
-(1, 'Alven', 'Hikmat', '1989-08-05', 'Bandung ', '085478569852', '2018-10-15'),
-(2, 'Mimin Mintarsih', 'Bambang Kun Mulyanto', '1963-12-07', 'Permata Biru ', '085715163620', '2018-10-15');
+(1, 'Alven', 'Hikmat', '1989-02-28', 'Cicadas', '085412458798', '2018-10-15'),
+(2, 'Giani Septarini', 'Reza', '1963-12-07', 'Permata Biru ', '085715163620', '2018-10-15'),
+(3, 'Nisrina', 'Dadang', '1989-12-01', ' Cijerah', '085754124789', '2018-10-17'),
+(4, 'Maya', 'Wildan', '1980-05-28', 'Ujung Berung ', '085978546587', '2018-10-17'),
+(5, 'Salshabila', 'Habib', '1988-07-22', ' Cijambe', '085478569875', '2018-10-17'),
+(6, 'Via', 'Rudi', '1985-08-15', ' Sukamiskin', '085745658745', '2018-10-17'),
+(8, 'Cucu ', 'Gungun', '1985-01-15', 'Bojong Koneng ', '085214569875', '2018-10-17'),
+(9, 'Tamara', 'Reyhan', '1989-06-25', 'Riung Bandung ', '085621458795', '2018-10-17'),
+(10, 'Dinda', 'Santo', '1989-06-28', 'Cigending, ujung berung ', '085233154789', '2018-10-17'),
+(11, 'Alfia Rizky', 'Fahmi', '1982-12-01', 'Cipadung ', '085214578956', '2018-10-17');
 
 -- --------------------------------------------------------
 
@@ -248,14 +253,15 @@ CREATE TABLE IF NOT EXISTS `persalinan` (
   `panjang_badan` float(5,2) DEFAULT NULL,
   `penolong` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id_persalinan`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `persalinan`
 --
 
 INSERT INTO `persalinan` (`id_persalinan`, `tgl_kunjungan`, `no_reg`, `nama`, `nama_suami`, `taksiran_persalinan`, `diagnosa`, `jam_lahir`, `jenis_kelamin`, `berat_badan`, `panjang_badan`, `penolong`) VALUES
-(2, '2018-10-15', 1, 'Alven', 'Hikmat', '2018-10-24 20:00:00', 'Bukaan 1', '2018-10-25 10:30:00', 'Perempuan', 3.90, 37.50, 'Wulan');
+(2, '2018-10-15', 1, 'Alven', 'Hikmat', '2018-02-03 07:00:00', 'Bukaan 1', '2018-02-04 15:15:00', 'Laki - Laki', 3.90, 37.50, 'Wulan'),
+(3, '2018-10-17', 11, 'Alfia Rizky', 'Fahmi', '2018-10-18 15:00:00', 'Bukaan 4', '2018-12-18 01:00:00', 'Perempuan', 3.70, 35.50, 'Dina');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
